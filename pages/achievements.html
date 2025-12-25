@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Bright Sun Sr. Sec. School</title>
+    
+  
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+</script>
+
+    <!-- Achievements Page CSS -->
+    <style>
+        /* For modern browsers */
+::selection {
+  background-color: #0A1F44; /* selection background */
+  color: #ffffff;            /* selected text color */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: #0A1F44;
+  color: #ffffff;
+}
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c5aa0; /* Blue */
+            --primary-dark: #1e3a6f;
+            --secondary: #c62828; /* Red */
+            --accent: #fbc02d; /* Yellow */
+            --light: #f8f9fa;
+            --dark: #333333;
+            --gray: #666666;
+            --white: #ffffff;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ===== NAVBAR STYLES ===== */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--white);
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--accent) 10%, transparent 10.5%);
+            background-size: 20px 20px;
+            background-position: 0 0;
+            opacity: 0.3;
+        }
+
+        .logo-circle-inner {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .logo-sun {
+            color: var(--accent);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .logo-container {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9) 0%, rgba(30, 58, 111, 0.9) 100%), url('https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 20px 80px;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* ===== SECTION TITLE STYLES ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* ===== HIGHLIGHTED ACHIEVEMENTS ===== */
+        .highlight-achievements {
+            padding: 80px 20px;
+            background-color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            border-top: 4px solid var(--accent);
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(251, 192, 45, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: var(--transition);
+            opacity: 0;
+        }
+
+        .highlight-card:hover::before {
+            opacity: 1;
+            animation: shine 1.5s ease;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .highlight-card i {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .highlight-card .achievement-year {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== BOARD RESULTS ===== */
+        .board-results {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e8eff7 100%);
+            margin-bottom: 60px;
+        }
+
+        .results-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto 0;
+            border-collapse: collapse;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .results-table thead {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .results-table th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .results-table tbody tr {
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .results-table tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .results-table tbody tr:hover {
+            background: rgba(44, 90, 160, 0.05);
+        }
+
+        .results-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .results-table .result-rank {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .results-table .result-year {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .results-table .result-percentage {
+            font-weight: 600;
+            color: var(--success);
+        }
+
+        /* ===== STUDENT ACHIEVEMENTS ===== */
+        .student-achievements {
+            padding: 80px 20px;
+            background-color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .student-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .student-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            flex-shrink: 0;
+        }
+
+        .student-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .student-info h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .student-info .student-year {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .student-info .achievement-desc {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===== SPORTS ACHIEVEMENTS ===== */
+        .sports-achievements {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e8eff7 100%);
+            margin-bottom: 60px;
+        }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .sports-card {
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: 10px;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--accent);
+        }
+
+        .sports-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .sports-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .sports-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .sports-card .medal-count {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* ===== GALLERY SECTION ===== */
+        .achievements-gallery {
+            padding: 80px 20px;
+            background-color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ===== LIGHTBOX MODAL ===== */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 5px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2001;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 60px;
+            cursor: pointer;
+            padding: 20px;
+            user-select: none;
+            z-index: 2001;
+            transition: var(--transition);
+        }
+
+        .lightbox-nav:hover {
+            color: var(--accent);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(44, 90, 160, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #a81c1c;
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-accent:hover {
+            background-color: #e6ac0e;
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo-img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .footer-logo h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .footer-logo h2 span {
+            color: var(--accent);
+        }
+
+        .footer-logo p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #bdc3c7;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 1200px) {
+            .nav-container {
+                padding: 10px 15px;
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links li {
+                margin-left: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                transform: translateX(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a.active::after {
+                display: none;
+            }
+            
+            .nav-links a.active {
+                background-color: rgba(44, 90, 160, 0.1);
+                border-radius: 5px;
+            }
+            
+            /* Hamburger icon animation */
+            .menu-toggle .fa-bars {
+                transition: var(--transition);
+            }
+            
+            .menu-toggle.active .fa-bars {
+                transform: rotate(90deg);
+            }
+            
+            .page-header {
+                padding: 130px 20px 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .results-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .student-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .lightbox-nav {
+                font-size: 40px;
+                padding: 15px;
+            }
+            
+            .lightbox-prev {
+                left: 10px;
+            }
+            
+            .lightbox-next {
+                right: 10px;
+            }
+            
+            .lightbox-close {
+                top: 15px;
+                right: 20px;
+                font-size: 35px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-links h3::after, .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 110px 20px 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .highlight-grid,
+            .student-grid,
+            .sports-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .logo-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-circle-inner {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .logo-sun {
+                font-size: 28px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.7rem;
+            }
+            
+            .nav-container {
+                padding: 10px 10px;
+            }
+            
+            .lightbox-nav {
+                font-size: 30px;
+                padding: 10px;
+            }
+            
+            .lightbox-caption {
+                font-size: 1rem;
+                bottom: -40px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .highlight-card,
+            .student-card,
+            .sports-card {
+                padding: 25px 15px;
+            }
+            
+            .highlight-card i {
+                font-size: 2.5rem;
+            }
+            
+            .sports-card .medal-count {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .lightbox-nav {
+                font-size: 25px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html" class="logo-container" id="logo-link">
+                    <!-- Logo will be loaded by JavaScript -->
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="infrastructure.html">Infrastructure</a></li>
+                <li><a href="achievements.html" class="active">Achievements</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Achievements</h1>
+            <p>A Legacy of Excellence: Celebrating 25+ Years of Academic Success, Sports Victories, and Student Accomplishments</p>
+        </div>
+    </section>
+
+    <!-- ===== HIGHLIGHTED ACHIEVEMENTS ===== -->
+    <section class="highlight-achievements">
+        <div class="container">
+            <h2 class="section-title">Major Achievements</h2>
+            <p class="section-subtitle">Proud moments that define our journey of excellence in education since 1995</p>
+            
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <i class="fas fa-trophy"></i>
+                    <div class="achievement-year">2012</div>
+                    <h3>13th Rank in HP Board</h3>
+                    <p>Our student secured 13th rank in Himachal Pradesh Board Merit List for Class 12th, marking our entry into top rankings.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <i class="fas fa-medal"></i>
+                    <div class="achievement-year">2015-2023</div>
+                    <h3>Consistent Top 3 Positions</h3>
+                    <p>Year after year, our students have secured top 3 positions in Barsar region for both Class 10th and 12th board exams.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <i class="fas fa-award"></i>
+                    <div class="achievement-year">2018</div>
+                    <h3>Best School Award</h3>
+                    <p>Recognized as "Best Emerging School" in Hamirpur district for academic excellence and infrastructure development.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="achievement-year">2020</div>
+                    <h3>100% Pass Rate</h3>
+                    <p>Achieved 100% pass rate in HP Board examinations for both Class 10th and 12th with 85% students securing first division.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="achievement-year">2022</div>
+                    <h3>1000+ Successful Alumni</h3>
+                    <p>Crossed the milestone of 1000+ successful alumni studying in prestigious colleges and working in reputed organizations.</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <i class="fas fa-laptop"></i>
+                    <div class="achievement-year">2023</div>
+                    <h3>Digital Excellence Award</h3>
+                    <p>Awarded for excellence in digital education implementation with smart classrooms and computer labs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOARD RESULTS ===== -->
+    <section class="board-results">
+        <div class="container">
+            <h2 class="section-title">Board Examination Results</h2>
+            <p class="section-subtitle">Consistent excellence in HP Board examinations over the years</p>
+            
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Class 10th Result</th>
+                        <th>Class 12th Result</th>
+                        <th>Top Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="result-year">2023</td>
+                        <td class="result-percentage">98.6%</td>
+                        <td class="result-percentage">96.8%</td>
+                        <td class="result-rank">3rd in Barsar</td>
+                    </tr>
+                    <tr>
+                        <td class="result-year">2022</td>
+                        <td class="result-percentage">97.2%</td>
+                        <td class="result-percentage">95.4%</td>
+                        <td class="result-rank">2nd in Barsar</td>
+                    </tr>
+                    <tr>
+                        <td class="result-year">2021</td>
+                        <td class="result-percentage">96.5%</td>
+                        <td class="result-percentage">94.8%</td>
+                        <td class="result-rank">1st in Barsar</td>
+                    </tr>
+                    <tr>
+                        <td class="result-year">2020</td>
+                        <td class="result-percentage">95.8%</td>
+                        <td class="result-percentage">93.2%</td>
+                        <td class="result-rank">3rd in Barsar</td>
+                    </tr>
+                    <tr>
+                        <td class="result-year">2019</td>
+                        <td class="result-percentage">94.3%</td>
+                        <td class="result-percentage">92.7%</td>
+                        <td class="result-rank">2nd in Barsar</td>
+                    </tr>
+                    <tr>
+                        <td class="result-year">2018</td>
+                        <td class="result-percentage">93.6%</td>
+                        <td class="result-percentage">91.9%</td>
+                        <td class="result-rank">1st in Barsar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
+    <section class="achievements-gallery">
+        <div class="container">
+            <h2 class="section-title">Achievements Gallery</h2>
+            <p class="section-subtitle">Memorable moments of success and celebration</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../assets/images/gallery/smartphones (1).jpg" alt="Award Ceremony">
+                    <div class="gallery-overlay">
+                        <h4>Smartphones Distribution</h4>
+                        <p>Students receiving smartphones for academic excellence</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/images/gallery/badi.jpg" alt="Sports Victory">
+                    <div class="gallery-overlay">
+                        <h4>Badminton Champions</h4>
+                        <p>District level badminton competition winners</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/images/gallery/shakshi +2 result.png" alt="Science Exhibition">
+                    <div class="gallery-overlay">
+                        <h4>13th Position in HP Board</h4>
+                        <p>Student securing 13th rank in Class 12th</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/images/gallery/bag.jpg" alt="Cultural Event">
+                    <div class="gallery-overlay">
+                        <h4>Laptops Distribution</h4>
+                        <p>Meritorious students receiving laptops</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/images/gallery/-2 merit cert- 2021-22 (1).jpg" alt="Debate Competition">
+                    <div class="gallery-overlay">
+                        <h4>+2 Merit Certificate</h4>
+                        <p>Recognition for outstanding board results</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/images/gallery/matric toppers 2021-22 (1).png" alt="Trophy Display">
+                    <div class="gallery-overlay">
+                        <h4>Matric Toppers 2021-22</h4>
+                        <p>Top performing students in Class 10th</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/images/gallery/12th toppers 2021-22 (1).png" alt="Trophy Display">
+                    <div class="gallery-overlay">
+                        <h4>12th Toppers 2021-22</h4>
+                        <p>Outstanding performers in Class 12th</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/images/gallery/cse.jpg" alt="Trophy Display">
+                    <div class="gallery-overlay">
+                        <h4>CSE Selection</h4>
+                        <p>Student selected in Computer Science Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIGHTBOX MODAL ===== -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <span class="lightbox-nav lightbox-prev" id="lightbox-prev">&#10094;</span>
+        <span class="lightbox-nav lightbox-next" id="lightbox-next">&#10095;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/images/gallery/logo.jpg" alt="Bright Sun School Logo" class="footer-logo-img" id="footer-logo">
+                    <h2>Bright<span>Sun</span> Sr. Sec. School</h2>
+                    <p>Barsar, Mehre, Himachal Pradesh</p>
+                    <p>Affiliated with HP Board of School Education</p>
+                    <p>Established in 1995 • Nursery to 12th</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="infrastructure.html">Infrastructure</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone"></i> 9817664300, 9817421900</p>
+                    <p><i class="fas fa-envelope"></i> info@brightsunschool.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Barsar, Mehre, Himachal Pradesh - 174305</p>
+                    
+                 
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Bright Sun Sr. Sec. School. All Rights Reserved.</p>
+                <p>
+  Website designed for educational purposes.  
+  For website development, contact <strong>Shiv</strong> 
+  All rights reserved.
+</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const logoLink = document.getElementById('logo-link');
+            const footerLogo = document.getElementById('footer-logo');
+            const allNavLinks = document.querySelectorAll('.nav-links a');
+            
+            // Function to load logo (with fallback)
+            function loadLogo() {
+                const logoPath = "../assets/images/gallery/logo.jpg";
+                const logoContainer = logoLink;
+                
+                // Try to load the image first
+                const img = new Image();
+                img.src = logoPath;
+                
+                img.onload = function() {
+                    // Image exists, show it
+                    logoContainer.innerHTML = `
+                        <div class="backup-logo" style="display: flex; align-items: center; gap: 15px;">
+                            <img src="${logoPath}" alt="Bright Sun School Logo" style="height: 70px; width: 70px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                            <div class="logo-text">
+                                <div class="logo-main">Bright<span style="color: var(--accent);">Sun</span></div>
+                                <div class="logo-sub">Sr. Sec. School</div>
+                            </div>
+                        </div>
+                    `;
+                };
+                
+                img.onerror = function() {
+                    // Image doesn't exist, show backup logo
+                    logoContainer.innerHTML = `
+                        <div class="logo-circle">
+                            <div class="logo-circle-inner">
+                                <div class="logo-sun">S</div>
+                            </div>
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-main">Bright<span style="color: var(--accent);">Sun</span></div>
+                            <div class="logo-sub">Sr. Sec. School</div>
+                        </div>
+                    `;
+                };
+            }
+            
+            // Load logo
+            loadLogo();
+            
+            // Handle footer logo loading
+            if (footerLogo) {
+                footerLogo.onerror = function() {
+                    this.style.display = 'none';
+                    const parentDiv = this.parentElement;
+                    const fallbackLogo = document.createElement('div');
+                    fallbackLogo.className = 'logo-circle';
+                    fallbackLogo.style.marginBottom = '20px';
+                    fallbackLogo.style.marginLeft = 'auto';
+                    fallbackLogo.style.marginRight = 'auto';
+                    fallbackLogo.innerHTML = `
+                        <div class="logo-circle-inner">
+                            <div class="logo-sun">S</div>
+                        </div>
+                    `;
+                    parentDiv.insertBefore(fallbackLogo, this.nextSibling);
+                };
+            }
+            
+            // Mobile menu toggle with hamburger icon
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function() {
+                    // Toggle menu visibility
+                    navLinks.classList.toggle('active');
+                    
+                    // Toggle hamburger icon rotation
+                    mobileMenu.classList.toggle('active');
+                    
+                    // Toggle body overflow
+                    if (navLinks.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
+            // Close menu when clicking a link (for mobile)
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside (for mobile)
+            document.addEventListener('click', function(event) {
+                const isClickInsideNavbar = event.target.closest('.navbar');
+                const isClickInsideMenu = event.target.closest('.nav-links');
+                const isMenuToggle = event.target.closest('#mobile-menu');
+                
+                if (!isClickInsideNavbar && !isClickInsideMenu && !isMenuToggle && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Set active link for current page
+            const currentPage = window.location.pathname.split('/').pop() || 'achievements.html';
+            const links = document.querySelectorAll('.nav-links a');
+            
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                
+                // Remove active class from all links
+                link.classList.remove('active');
+                
+                // Check if this link matches current page
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Add animation to cards on scroll
+            function animateCards() {
+                const cards = document.querySelectorAll('.highlight-card, .student-card, .sports-card, .gallery-item');
+                
+                cards.forEach(card => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (cardPosition < screenPosition) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            }
+            
+            // Set initial state for animation
+            const cards = document.querySelectorAll('.highlight-card, .student-card, .sports-card, .gallery-item');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px) scale(0.95)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Run animation on load and scroll
+            window.addEventListener('load', animateCards);
+            window.addEventListener('scroll', animateCards);
+            
+            // Handle window resize - close mobile menu when resizing to larger screen
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // ===== LIGHTBOX FUNCTIONALITY =====
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            let currentImageIndex = 0;
+            
+            // Open lightbox when clicking on gallery image
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    currentImageIndex = index;
+                    updateLightbox();
+                    lightboxModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close lightbox
+            lightboxClose.addEventListener('click', function() {
+                lightboxModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close lightbox when clicking outside image
+            lightboxModal.addEventListener('click', function(event) {
+                if (event.target === lightboxModal) {
+                    lightboxModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Previous image
+            lightboxPrev.addEventListener('click', function(event) {
+                event.stopPropagation();
+                currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                updateLightbox();
+            });
+            
+            // Next image
+            lightboxNext.addEventListener('click', function(event) {
+                event.stopPropagation();
+                currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                updateLightbox();
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(event) {
+                if (lightboxModal.classList.contains('active')) {
+                    if (event.key === 'Escape') {
+                        lightboxModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    } else if (event.key === 'ArrowLeft') {
+                        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                        updateLightbox();
+                    } else if (event.key === 'ArrowRight') {
+                        currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                        updateLightbox();
+                    }
+                }
+            });
+            
+            // Update lightbox content
+            function updateLightbox() {
+                const currentItem = galleryItems[currentImageIndex];
+                const imgSrc = currentItem.querySelector('img').src;
+                const caption = currentItem.querySelector('.gallery-overlay h4').textContent;
+                const description = currentItem.querySelector('.gallery-overlay p')?.textContent || '';
+                
+                lightboxImg.src = imgSrc;
+                lightboxCaption.textContent = caption + (description ? ' - ' + description : '');
+                
+                // Add loading animation
+                lightboxImg.style.opacity = '0';
+                setTimeout(() => {
+                    lightboxImg.style.opacity = '1';
+                    lightboxImg.style.transition = 'opacity 0.3s ease';
+                }, 100);
+            }
+            
+            // Gallery image hover effect enhancement
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

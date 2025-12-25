@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Bright Sun Sr. Sec. School</title>
+    
+   
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+</script>
+
+    <!-- Academics Page CSS -->
+    <style>
+        /* For modern browsers */
+::selection {
+  background-color: #0A1F44; /* selection background */
+  color: #ffffff;            /* selected text color */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: #0A1F44;
+  color: #ffffff;
+}
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c5aa0; /* Blue */
+            --primary-dark: #1e3a6f;
+            --secondary: #c62828; /* Red */
+            --accent: #fbc02d; /* Yellow */
+            --light: #f8f9fa;
+            --dark: #333333;
+            --gray: #666666;
+            --white: #ffffff;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ===== NAVBAR STYLES ===== */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-img {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9) 0%, rgba(30, 58, 111, 0.9) 100%), url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 20px 80px;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* ===== ACADEMICS OVERVIEW ===== */
+        .academics-overview {
+            padding: 60px 20px;
+            background-color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .overview-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .overview-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .overview-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 5px solid var(--primary);
+        }
+
+        .overview-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .overview-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .overview-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .overview-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .overview-text p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        /* ===== ACADEMIC STRUCTURE ===== */
+        .academic-structure {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e8eff7 100%);
+            margin-bottom: 60px;
+        }
+
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .structure-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            border-top: 5px solid var(--accent);
+        }
+
+        .structure-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .structure-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .structure-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .structure-card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .structure-card li {
+            margin-bottom: 10px;
+            color: var(--gray);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .structure-card li i {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        /* ===== SUBJECTS OFFERED ===== */
+        .subjects-offered {
+            padding: 80px 20px;
+            background-color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .subjects-tabs {
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+
+        .tabs-header {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tab-btn:hover {
+            background: rgba(44, 90, 160, 0.1);
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.5s ease;
+            border: 2px solid var(--accent);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .subject-category {
+            margin-bottom: 30px;
+        }
+
+        .subject-category h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .subject-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .subject-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid var(--secondary);
+            transition: var(--transition);
+        }
+
+        .subject-item:hover {
+            background: rgba(198, 40, 40, 0.05);
+            transform: translateX(5px);
+        }
+
+        /* ===== EXAMINATION SYSTEM ===== */
+        .examination-system {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e8eff7 100%);
+            margin-bottom: 60px;
+        }
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .exam-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        .exam-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .exam-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .exam-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .exam-card ol {
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .exam-card li {
+            margin-bottom: 10px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ===== CO-CURRICULAR ACTIVITIES ===== */
+        .co-curricular {
+            padding: 80px 20px;
+            background-color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .activity-card {
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: 10px;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+            border-top: 4px solid var(--accent);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .activity-card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .activity-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* ===== SECTION TITLE STYLES ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(44, 90, 160, 0.3);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-accent:hover {
+            background-color: #e6ac0e;
+            transform: translateY(-2px);
+        }
+
+        /* ===== LOGO STYLES ===== */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--white);
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--accent) 10%, transparent 10.5%);
+            background-size: 20px 20px;
+            background-position: 0 0;
+            opacity: 0.3;
+        }
+
+        .logo-circle-inner {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .logo-sun {
+            color: var(--accent);
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-sub {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* ===== BACKUP LOGO STYLES ===== */
+        .backup-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .backup-logo-img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo-img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .footer-logo h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .footer-logo h2 span {
+            color: var(--accent);
+        }
+
+        .footer-logo p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #bdc3c7;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 1200px) {
+            .nav-container {
+                padding: 10px 15px;
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links li {
+                margin-left: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 0.95rem;
+            }
+            
+            .overview-text h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                transform: translateX(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a.active::after {
+                display: none;
+            }
+            
+            .nav-links a.active {
+                background-color: rgba(44, 90, 160, 0.1);
+                border-radius: 5px;
+            }
+            
+            /* Hamburger icon animation */
+            .menu-toggle .fa-bars {
+                transition: var(--transition);
+            }
+            
+            .menu-toggle.active .fa-bars {
+                transform: rotate(90deg);
+            }
+            
+            .page-header {
+                padding: 130px 20px 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+            
+            .page-header p {
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .overview-content {
+                flex-direction: column;
+            }
+            
+            .overview-text, .overview-image {
+                width: 100%;
+            }
+            
+            .tabs-header {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .structure-grid,
+            .exam-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-content {
+                padding: 25px;
+            }
+            
+            .subject-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-links h3::after, .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 110px 15px 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .overview-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 250px;
+                display: block;
+                margin: 0 auto;
+            }
+            
+            .logo-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-circle-inner {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .logo-sun {
+                font-size: 28px;
+            }
+            
+            .logo-main {
+                font-size: 1.5rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.8rem;
+            }
+            
+            .backup-logo-img {
+                height: 60px;
+                width: 60px;
+            }
+            
+            .footer-logo-img {
+                height: 60px;
+                width: 60px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .structure-card, .exam-card, .activity-card {
+                padding: 25px 15px;
+            }
+            
+            .structure-card i, .exam-card i, .activity-card i {
+                font-size: 2.5rem;
+            }
+            
+            .nav-container {
+                padding: 10px 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Animation for cards */
+        .structure-card, .exam-card, .activity-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .structure-card.visible, .exam-card.visible, .activity-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- Logo will be loaded by JavaScript -->
+                <a href="../index.html" class="logo-container" id="logo-link">
+                    <!-- This will be filled by JavaScript -->
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="academics.html" class="active">Academics</a></li>
+                <li><a href="infrastructure.html">Infrastructure</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Academics at Bright Sun</h1>
+            <p>Excellence in Education: Nurturing Minds, Building Futures with Comprehensive Curriculum and Holistic Development</p>
+        </div>
+    </section>
+
+    <!-- ===== ACADEMICS OVERVIEW ===== -->
+    <section class="academics-overview">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2>Our Academic Philosophy</h2>
+                    <p>At Bright Sun Sr. Sec. School, we believe in providing a balanced education that combines academic excellence with holistic development. Our curriculum is designed to challenge students intellectually while nurturing their creative and social skills.</p>
+                    <p>Affiliated with the Himachal Pradesh Board of School Education, we follow a comprehensive curriculum that prepares students for both board examinations and life beyond school. Our teaching methodology emphasizes conceptual understanding, critical thinking, and practical application of knowledge.</p>
+                    <p>We offer education from Nursery to Class 12th, with special emphasis on foundational learning in primary years, skill development in middle school, and career-focused specialization in senior secondary classes.</p>
+                    <a href="contact.html" class="btn btn-primary">Contact for Admissions</a>
+                </div>
+                <div class="overview-image">
+                    <img src="../assets/images/gallery/acadmics.jpg" alt="Classroom Learning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACADEMIC STRUCTURE ===== -->
+    <section class="academic-structure">
+        <div class="container">
+            <h2 class="section-title">Academic Structure</h2>
+            <div class="structure-grid">
+                <div class="structure-card">
+                    <i class="fas fa-school"></i>
+                    <h3>Primary School</h3>
+                    <p>Nursery to Class 5</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Foundation in Languages (English, Hindi)</li>
+                        <li><i class="fas fa-check"></i> Basic Mathematics & EVS</li>
+                        <li><i class="fas fa-check"></i> Creative Arts & Music</li>
+                        <li><i class="fas fa-check"></i> Physical Education</li>
+                        <li><i class="fas fa-check"></i> Activity-based Learning</li>
+                    </ul>
+                </div>
+                
+                <div class="structure-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Middle School</h3>
+                    <p>Class 6 to Class 8</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> English, Hindi, Sanskrit</li>
+                        <li><i class="fas fa-check"></i> Mathematics & Science</li>
+                        <li><i class="fas fa-check"></i> Social Studies</li>
+                        <li><i class="fas fa-check"></i> Computer Education</li>
+                        <li><i class="fas fa-check"></i> Introduction to Third Language</li>
+                    </ul>
+                </div>
+                
+                <div class="structure-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Senior Secondary</h3>
+                    <p>Class 9 to Class 12</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Science Stream (PCM/PCB)</li>
+                        <li><i class="fas fa-check"></i> Commerce Stream</li>
+                        <li><i class="fas fa-check"></i> Mathematics & Computer Science</li>
+                        <li><i class="fas fa-check"></i> Board Exam Preparation</li>
+                        <li><i class="fas fa-check"></i> Career Counseling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SUBJECTS OFFERED ===== -->
+    <section class="subjects-offered">
+        <div class="container">
+            <h2 class="section-title">Subjects Offered</h2>
+            <div class="subjects-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="primary">Primary (1-5)</button>
+                    <button class="tab-btn" data-tab="middle">Middle (6-8)</button>
+                    <button class="tab-btn" data-tab="secondary">Secondary (9-10)</button>
+                    <button class="tab-btn" data-tab="senior">Senior Secondary (11-12)</button>
+                </div>
+                
+                <div class="tab-content active" id="primary-tab">
+                    <div class="subject-category">
+                        <h4>Core Subjects</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">English</div>
+                            <div class="subject-item">Hindi</div>
+                            <div class="subject-item">Mathematics</div>
+                            <div class="subject-item">Environmental Studies</div>
+                        </div>
+                    </div>
+                    
+                    <div class="subject-category">
+                        <h4>Additional Subjects</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">Drawing & Painting</div>
+                            <div class="subject-item">Music</div>
+                            <div class="subject-item">Physical Education</div>
+                            <div class="subject-item">General Knowledge</div>
+                            <div class="subject-item">Computer Basics</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="middle-tab">
+                    <div class="subject-category">
+                        <h4>Languages</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">English</div>
+                            <div class="subject-item">Hindi</div>
+                            <div class="subject-item">Sanskrit</div>
+                        </div>
+                    </div>
+                    
+                    <div class="subject-category">
+                        <h4>Core Subjects</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">Mathematics</div>
+                            <div class="subject-item">Science</div>
+                            <div class="subject-item">Social Science</div>
+                        </div>
+                    </div>
+                    
+                    <div class="subject-category">
+                        <h4>Additional Subjects</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">Computer Science</div>
+                            <div class="subject-item">Art & Craft</div>
+                            <div class="subject-item">Physical Education</div>
+                            <div class="subject-item">Moral Science</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="secondary-tab">
+                    <div class="subject-category">
+                        <h4>Compulsory Subjects</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">English</div>
+                            <div class="subject-item">Hindi</div>
+                            <div class="subject-item">Mathematics</div>
+                            <div class="subject-item">Science</div>
+                            <div class="subject-item">Social Science</div>
+                        </div>
+                    </div>
+                    
+                    <div class="subject-category">
+                        <h4>Optional Subjects</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">Computer Applications</div>
+                            <div class="subject-item">Art Education</div>
+                            <div class="subject-item">Physical & Health Education</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="senior-tab">
+                    <div class="subject-category">
+                        <h4>Science Stream</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">Physics</div>
+                            <div class="subject-item">Chemistry</div>
+                            <div class="subject-item">Biology/Mathematics</div>
+                            <div class="subject-item">English</div>
+                            <div class="subject-item">Computer Science</div>
+                        </div>
+                    </div>
+                    
+                    <div class="subject-category">
+                        <h4>Commerce Stream</h4>
+                        <div class="subject-list">
+                            <div class="subject-item">Accountancy</div>
+                            <div class="subject-item">Business Studies</div>
+                            <div class="subject-item">Economics</div>
+                            <div class="subject-item">English</div>
+                            <div class="subject-item">Mathematics/Informatics Practices</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXAMINATION SYSTEM ===== -->
+    <section class="examination-system">
+        <div class="container">
+            <h2 class="section-title">Examination & Assessment</h2>
+            <div class="exam-grid">
+                <div class="exam-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Continuous Assessment</h3>
+                    <p>Regular evaluation through class tests, projects, and assignments to monitor student progress throughout the academic year.</p>
+                    <ol>
+                        <li>Monthly Unit Tests</li>
+                        <li>Project Work Assessment</li>
+                        <li>Class Participation Evaluation</li>
+                        <li>Homework & Assignment Checks</li>
+                    </ol>
+                </div>
+                
+                <div class="exam-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Term Examinations</h3>
+                    <p>Formal examinations conducted twice a year to assess comprehensive understanding of the curriculum.</p>
+                    <ol>
+                        <li>Half-Yearly Examinations</li>
+                        <li>Annual Final Examinations</li>
+                        <li>Pre-Board Tests (Class 10 & 12)</li>
+                        <li>Practical Examinations</li>
+                    </ol>
+                </div>
+                
+                <div class="exam-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Board Examinations</h3>
+                    <p>Preparation and guidance for HP Board Examinations for Classes 10 and 12 with special focus on merit achievement.</p>
+                    <ol>
+                        <li>Special Revision Classes</li>
+                        <li>Mock Board Examinations</li>
+                        <li>Doubt Clearing Sessions</li>
+                        <li>Time Management Training</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CO-CURRICULAR ACTIVITIES ===== -->
+    <section class="co-curricular">
+        <div class="container">
+            <h2 class="section-title">Co-curricular Activities</h2>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Art & Craft</h3>
+                    <p>Creative expression through drawing, painting, clay modeling, and craft activities to develop artistic skills.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Music & Dance</h3>
+                    <p>Training in vocal music, instrumental music, and various dance forms to nurture cultural appreciation.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-running"></i>
+                    <h3>Sports & Games</h3>
+                    <p>Regular sports activities including cricket, basketball, badminton, and athletics for physical fitness.</p>
+                </div>
+                
+                <div class="activity-card">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Debate & Elocution</h3>
+                    <p>Platforms for public speaking, debates, and discussions to enhance communication skills and confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/images/gallery/logo.jpg" alt="Bright Sun School Logo" class="footer-logo-img" id="footer-logo">
+                    <h2>Bright<span>Sun</span> Sr. Sec. School</h2>
+                    <p>Barsar, Mehre, Himachal Pradesh</p>
+                    <p>Affiliated with HP Board of School Education</p>
+                    <p>Established in 1995 • Nursery to 12th</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="infrastructure.html">Infrastructure</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone"></i> 9817664300, 9817421900</p>
+                    <p><i class="fas fa-envelope"></i> info@brightsunschool.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Barsar, Mehre, Himachal Pradesh - 174305</p>
+                    
+             
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Bright Sun Sr. Sec. School. All Rights Reserved.</p>
+                      <p>
+  Website designed for educational purposes.  
+  For website development, contact <strong>Shiv</strong> 
+  All rights reserved.
+</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const logoLink = document.getElementById('logo-link');
+            const footerLogo = document.getElementById('footer-logo');
+            const allNavLinks = document.querySelectorAll('.nav-links a');
+            
+            // Function to load logo (with fallback)
+            function loadLogo() {
+                const logoPath = "../assets/images/gallery/logo.jpg";
+                const logoContainer = logoLink;
+                
+                // Try to load the image first
+                const img = new Image();
+                img.src = logoPath;
+                
+                img.onload = function() {
+                    // Image exists, show it
+                    logoContainer.innerHTML = `
+                        <div class="backup-logo">
+                            <img src="${logoPath}" alt="Bright Sun School Logo" class="backup-logo-img">
+                            <div class="logo-text">
+                                <div class="logo-main">Bright<span>Sun</span></div>
+                                <div class="logo-sub">Sr. Sec. School</div>
+                            </div>
+                        </div>
+                    `;
+                };
+                
+                img.onerror = function() {
+                    // Image doesn't exist, show backup logo
+                    logoContainer.innerHTML = `
+                        <div class="logo-circle">
+                            <div class="logo-circle-inner">
+                                <div class="logo-sun">S</div>
+                            </div>
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-main">Bright<span>Sun</span></div>
+                            <div class="logo-sub">Sr. Sec. School</div>
+                        </div>
+                    `;
+                };
+            }
+            
+            // Load logo
+            loadLogo();
+            
+            // Handle footer logo loading
+            if (footerLogo) {
+                footerLogo.onerror = function() {
+                    this.style.display = 'none';
+                    const parentDiv = this.parentElement;
+                    const fallbackLogo = document.createElement('div');
+                    fallbackLogo.className = 'logo-circle';
+                    fallbackLogo.style.marginBottom = '20px';
+                    fallbackLogo.style.marginLeft = 'auto';
+                    fallbackLogo.style.marginRight = 'auto';
+                    fallbackLogo.innerHTML = `
+                        <div class="logo-circle-inner">
+                            <div class="logo-sun">S</div>
+                        </div>
+                    `;
+                    parentDiv.insertBefore(fallbackLogo, this.nextSibling);
+                };
+            }
+            
+            // Mobile menu toggle with hamburger icon
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function() {
+                    // Toggle menu visibility
+                    navLinks.classList.toggle('active');
+                    
+                    // Toggle hamburger icon rotation
+                    mobileMenu.classList.toggle('active');
+                    
+                    // Toggle body overflow
+                    if (navLinks.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
+            // Close menu when clicking a link (for mobile)
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside (for mobile)
+            document.addEventListener('click', function(event) {
+                const isClickInsideNavbar = event.target.closest('.navbar');
+                const isClickInsideMenu = event.target.closest('.nav-links');
+                const isMenuToggle = event.target.closest('#mobile-menu');
+                
+                if (!isClickInsideNavbar && !isClickInsideMenu && !isMenuToggle && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Set active link for current page
+            const currentPage = window.location.pathname.split('/').pop() || 'academics.html';
+            const links = document.querySelectorAll('.nav-links a');
+            
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                
+                // Remove active class from all links
+                link.classList.remove('active');
+                
+                // Check if this link matches current page
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Tab functionality for subjects
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+            
+            // Add animation to cards on scroll
+            function animateCards() {
+                const cards = document.querySelectorAll('.structure-card, .exam-card, .activity-card');
+                const screenPosition = window.innerHeight * 0.8;
+                
+                cards.forEach(card => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    
+                    if (cardPosition < screenPosition) {
+                        card.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Run animation on load and scroll
+            window.addEventListener('load', animateCards);
+            window.addEventListener('scroll', animateCards);
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

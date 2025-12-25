@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Bright Sun Sr. Sec. School</title>
+    
+   
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+</script>
+
+    <!-- Gallery Page CSS -->
+    <style>
+        /* For modern browsers */
+::selection {
+  background-color: #0A1F44; /* selection background */
+  color: #ffffff;            /* selected text color */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: #0A1F44;
+  color: #ffffff;
+}
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c5aa0; /* Blue */
+            --primary-dark: #1e3a6f;
+            --secondary: #c62828; /* Red */
+            --accent: #fbc02d; /* Yellow */
+            --light: #f8f9fa;
+            --dark: #333333;
+            --gray: #666666;
+            --white: #ffffff;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ===== NAVBAR STYLES ===== */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--white);
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--accent) 10%, transparent 10.5%);
+            background-size: 20px 20px;
+            background-position: 0 0;
+            opacity: 0.3;
+        }
+
+        .logo-circle-inner {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .logo-sun {
+            color: var(--accent);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .logo-container {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9) 0%, rgba(30, 58, 111, 0.9) 100%);
+            color: var(--white);
+            padding: 150px 20px 80px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .page-header span {
+            color: var(--accent);
+        }
+
+        /* ===== GALLERY FILTER ===== */
+        .gallery-filter {
+            padding: 20px 0 40px;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: var(--white);
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            background-color: #f9f9f9;
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* ===== GALLERY GRID ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px 0 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            height: 250px;
+            transition: var(--transition);
+            border-top: 3px solid var(--accent);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .gallery-item-category {
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* ===== LIGHTBOX MODAL ===== */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1100;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .lightbox-caption {
+            color: var(--white);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            z-index: 1101;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--white);
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 10px;
+            transition: var(--transition);
+        }
+
+        .lightbox-nav:hover {
+            color: var(--accent);
+        }
+
+        .lightbox-prev {
+            left: 30px;
+        }
+
+        .lightbox-next {
+            right: 30px;
+        }
+
+        /* ===== VIDEO GALLERY ===== */
+        .video-gallery {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e8eff7 100%);
+            margin-top: 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .video-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 3px solid var(--secondary);
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .video-item:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background-color: rgba(44, 90, 160, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .video-play-btn:hover {
+            background-color: var(--primary);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .video-desc {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo-img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .footer-logo h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .footer-logo h2 span {
+            color: var(--accent);
+        }
+
+        .footer-logo p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #bdc3c7;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 1200px) {
+            .nav-container {
+                padding: 10px 15px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links li {
+                margin-left: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                transform: translateX(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a.active::after {
+                display: none;
+            }
+            
+            .nav-links a.active {
+                background-color: rgba(44, 90, 160, 0.1);
+                border-radius: 5px;
+            }
+            
+            /* Hamburger icon animation */
+            .menu-toggle .fa-bars {
+                transition: var(--transition);
+            }
+            
+            .menu-toggle.active .fa-bars {
+                transform: rotate(90deg);
+            }
+            
+            .page-header {
+                padding: 130px 20px 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+            
+            .video-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .lightbox-nav {
+                font-size: 2rem;
+                top: 40%;
+            }
+            
+            .lightbox-prev {
+                left: 10px;
+            }
+            
+            .lightbox-next {
+                right: 10px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-links h3::after, .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 110px 15px 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                gap: 5px;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .lightbox-nav {
+                font-size: 1.8rem;
+            }
+            
+            .logo-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-circle-inner {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .logo-sun {
+                font-size: 28px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.7rem;
+            }
+            
+            .nav-container {
+                padding: 10px 10px;
+            }
+            
+            .video-play-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 80%;
+                max-width: 250px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .video-play-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(44, 90, 160, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #a81c1c;
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-accent:hover {
+            background-color: #e6ac0e;
+            transform: translateY(-2px);
+        }
+
+
+        .video-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.video-thumbnail video {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #000;
+}
+
+.video-item {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.video-info {
+  padding: 16px;
+}
+
+.video-title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.video-desc {
+  font-size: 14px;
+  color: #666;
+}
+
+    </style>
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html" class="logo-container" id="logo-link">
+                    <!-- Logo will be loaded by JavaScript -->
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="infrastructure.html">Infrastructure</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>School <span>Gallery</span></h1>
+            <p>Explore our visual journey through campus life, events, achievements, and memorable moments at Bright Sun Sr. Sec. School.</p>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY FILTER ===== -->
+    <section class="gallery-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="campus">Campus</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="activities">Activities</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="achievements">Achievements</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY GRID ===== -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Campus Images -->
+                <div class="gallery-item" data-category="campus">
+                    <img src="../assets/images/gallery/home.jpg" alt="School Building">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Main School Building</div>
+                        <div class="gallery-item-category">Campus</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="campus">
+                    <img src="../assets/images/gallery/kid.jpg" alt="Classroom">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">kids Classroom</div>
+                        <div class="gallery-item-category">Campus</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="campus">
+                    <img src="../assets/images/gallery/ground.JPG" alt="Classroom">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">kids play area</div>
+                        <div class="gallery-item-category">Campus</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="campus">
+                    <img src="../assets/images/gallery/classs.jpg" alt="Science Lab">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">projector</div>
+                        <div class="gallery-item-category">Campus</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="campus">
+                    <img src="../assets/images/gallery/about1.jpg" alt="Classroom">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">morning assably</div>
+                        <div class="gallery-item-category">Campus</div>
+                    </div>
+                </div>
+<div class="gallery-item" data-category="campus">
+                    <img src="../assets/images/gallery/campus.jpg" alt="Classroom">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">morning assably</div>
+                        <div class="gallery-item-category">Campus</div>
+                    </div>
+                </div>
+
+                <!-- Events Images -->
+               
+                
+                <!-- Activities Images -->
+               
+                
+                
+                
+                
+                <!-- Sports Images -->
+                
+                <div class="gallery-item" data-category="sports">
+                    <img src="../assets/images/gallery/multiple.JPG" alt="Basketball">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">games</div>
+                        <div class="gallery-item-category">Sports</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="sports">
+                    <img src="../assets/images/gallery/games.JPG" alt="Cricket">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">games</div>
+                        <div class="gallery-item-category">Sports</div>
+                    </div>
+                </div>
+
+                  <div class="gallery-item" data-category="sports">
+                    <img src="../assets/images/gallery/Badminton news.png" alt="Cricket">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">selected in badminton</div>
+                        <div class="gallery-item-category">Sports</div>
+                    </div>
+                </div>
+                
+                <!-- Achievements Images -->
+                <div class="gallery-item" data-category="achievements">
+                    <img src="../assets/images/gallery/+2 merit cert. 2021-22.jpg" alt="Trophy">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">merit certificate</div>
+                        <div class="gallery-item-category">Achievements</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="achievements">
+                    <img src="../assets/images/gallery/smartphones (1).jpg" alt="Award Ceremony">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">Got smartphones</div>
+                        <div class="gallery-item-category">Achievements</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="achievements">
+                    <img src="../assets/images/gallery/shakshi +2 result.png" alt="Topper">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">13th position</div>
+                        <div class="gallery-item-category">Achievements</div>
+                    </div>
+                </div>
+
+                  <div class="gallery-item" data-category="achievements">
+                    <img src="../assets/images/gallery/badi.jpg" alt="Topper">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">badminton</div>
+                        <div class="gallery-item-category">Achievements</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="sports">
+                    <img src="../assets/images/gallery/Badminton news.png" alt="Cricket">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">selected in badminton</div>
+                        <div class="gallery-item-category">Achievements</div>
+                    </div>
+                </div>
+ <div class="gallery-item" data-category="sports">
+                    <img src="../assets/images/gallery/bag.jpg" alt="Cricket">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-title">selected students</div>
+                        <div class="gallery-item-category">Achievements</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+                  
+    <!-- ===== VIDEO GALLERY ===== -->
+<section class="video-gallery">
+  <div class="container">
+    <h2 class="section-title">Video Gallery</h2>
+
+    <div class="video-container">
+
+      <!-- Video 1 -->
+<div class="video-item">
+  <div class="video-thumbnail">
+    <video
+      id="schoolVideo"
+      src="../assets/videos/IMG_7456.mp4"
+      controls
+      preload="metadata"
+    ></video>
+  </div>
+
+  <div class="video-info">
+    <div class="video-title">Virtual School Tour</div>
+    <div class="video-desc">
+      Take a virtual tour of our campus facilities, classrooms, labs, and sports complex.
+    </div>
+  </div>
+</div>
+
+<script>
+  const video = document.getElementById("schoolVideo");
+
+  video.addEventListener("click", () => {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen(); // Safari
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen(); // IE/Edge
+    }
+
+    video.play();
+  });
+</script>
+
+    </div>
+  </div>
+</section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/images/gallery/logo.jpg" alt="Bright Sun School Logo" class="footer-logo-img" id="footer-logo">
+                    <h2>Bright<span>Sun</span> Sr. Sec. School</h2>
+                    <p>Barsar, Mehre, Himachal Pradesh</p>
+                    <p>Affiliated with HP Board of School Education</p>
+                    <p>Established in 1995 • Nursery to 12th</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone"></i> 9817664300, 9817421900</p>
+                    <p><i class="fas fa-envelope"></i> info@brightsunschool.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Barsar, Mehre, Himachal Pradesh - 174305</p>
+                    
+               
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Bright Sun Sr. Sec. School. All Rights Reserved.</p>
+                <p>
+  Website designed for educational purposes.  
+  For website development, contact <strong>Shiv</strong> 
+  All rights reserved.
+</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== LIGHTBOX MODAL ===== -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <div class="lightbox-close" id="lightbox-close">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="lightbox-nav lightbox-prev" id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        
+        <div class="lightbox-nav lightbox-next" id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- ===== VIDEO MODAL ===== -->
+    <div class="lightbox-modal" id="video-modal">
+        <div class="lightbox-close" id="video-close">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="lightbox-content">
+            <iframe id="video-iframe" width="100%" height="500" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="lightbox-caption" id="video-caption"></div>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const logoLink = document.getElementById('logo-link');
+            const footerLogo = document.getElementById('footer-logo');
+            const allNavLinks = document.querySelectorAll('.nav-links a');
+            
+            // Function to load logo (with fallback)
+            function loadLogo() {
+                const logoPath = "../assets/images/gallery/logo.jpg";
+                const logoContainer = logoLink;
+                
+                // Try to load the image first
+                const img = new Image();
+                img.src = logoPath;
+                
+                img.onload = function() {
+                    // Image exists, show it
+                    logoContainer.innerHTML = `
+                        <div class="backup-logo" style="display: flex; align-items: center; gap: 15px;">
+                            <img src="${logoPath}" alt="Bright Sun School Logo" style="height: 70px; width: 70px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                            <div class="logo-text">
+                                <div class="logo-main">Bright<span style="color: var(--accent);">Sun</span></div>
+                                <div class="logo-sub">Sr. Sec. School</div>
+                            </div>
+                        </div>
+                    `;
+                };
+                
+                img.onerror = function() {
+                    // Image doesn't exist, show backup logo
+                    logoContainer.innerHTML = `
+                        <div class="logo-circle">
+                            <div class="logo-circle-inner">
+                                <div class="logo-sun">S</div>
+                            </div>
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-main">Bright<span style="color: var(--accent);">Sun</span></div>
+                            <div class="logo-sub">Sr. Sec. School</div>
+                        </div>
+                    `;
+                };
+            }
+            
+            // Load logo
+            loadLogo();
+            
+            // Handle footer logo loading
+            if (footerLogo) {
+                footerLogo.onerror = function() {
+                    this.style.display = 'none';
+                    const parentDiv = this.parentElement;
+                    const fallbackLogo = document.createElement('div');
+                    fallbackLogo.className = 'logo-circle';
+                    fallbackLogo.style.marginBottom = '20px';
+                    fallbackLogo.style.marginLeft = 'auto';
+                    fallbackLogo.style.marginRight = 'auto';
+                    fallbackLogo.innerHTML = `
+                        <div class="logo-circle-inner">
+                            <div class="logo-sun">S</div>
+                        </div>
+                    `;
+                    parentDiv.insertBefore(fallbackLogo, this.nextSibling);
+                };
+            }
+            
+            // Mobile menu toggle with hamburger icon
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function() {
+                    // Toggle menu visibility
+                    navLinks.classList.toggle('active');
+                    
+                    // Toggle hamburger icon rotation
+                    mobileMenu.classList.toggle('active');
+                    
+                    // Toggle body overflow
+                    if (navLinks.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
+            // Close menu when clicking a link (for mobile)
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside (for mobile)
+            document.addEventListener('click', function(event) {
+                const isClickInsideNavbar = event.target.closest('.navbar');
+                const isClickInsideMenu = event.target.closest('.nav-links');
+                const isMenuToggle = event.target.closest('#mobile-menu');
+                
+                if (!isClickInsideNavbar && !isClickInsideMenu && !isMenuToggle && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Set active link for current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const links = document.querySelectorAll('.nav-links a');
+            
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                
+                // Remove active class from all links
+                link.classList.remove('active');
+                
+                // Check if this link matches current page
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Gallery Filter Functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide gallery items based on filter
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Lightbox Functionality
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+            
+            let currentImageIndex = 0;
+            const images = Array.from(galleryItems);
+            
+            // Open lightbox when clicking on gallery item
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.querySelector('img').src;
+                    const imgTitle = this.querySelector('.gallery-item-title').textContent;
+                    const imgCategory = this.querySelector('.gallery-item-category').textContent;
+                    
+                    currentImageIndex = index;
+                    
+                    lightboxImg.src = imgSrc;
+                    lightboxCaption.textContent = `${imgTitle} - ${imgCategory}`;
+                    lightboxModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close lightbox
+            lightboxClose.addEventListener('click', function() {
+                lightboxModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Previous image
+            lightboxPrev.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                updateLightbox();
+            });
+            
+            // Next image
+            lightboxNext.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateLightbox();
+            });
+            
+            function updateLightbox() {
+                const currentItem = images[currentImageIndex];
+                const imgSrc = currentItem.querySelector('img').src;
+                const imgTitle = currentItem.querySelector('.gallery-item-title').textContent;
+                const imgCategory = currentItem.querySelector('.gallery-item-category').textContent;
+                
+                lightboxImg.src = imgSrc;
+                lightboxCaption.textContent = `${imgTitle} - ${imgCategory}`;
+            }
+            
+            // Close lightbox when clicking outside image
+            lightboxModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    lightboxModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Video Modal Functionality
+            const videoModal = document.getElementById('video-modal');
+            const videoIframe = document.getElementById('video-iframe');
+            const videoClose = document.getElementById('video-close');
+            const videoPlayButtons = document.querySelectorAll('.video-play-btn');
+            
+            videoPlayButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const videoUrl = this.getAttribute('data-video');
+                    const videoTitle = this.parentElement.parentElement.querySelector('.video-title').textContent;
+                    
+                    videoIframe.src = videoUrl;
+                    document.getElementById('video-caption').textContent = videoTitle;
+                    videoModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close video modal
+            videoClose.addEventListener('click', function() {
+                videoModal.classList.remove('active');
+                videoIframe.src = '';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close video modal when clicking outside
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    videoModal.classList.remove('active');
+                    videoIframe.src = '';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Keyboard navigation for lightbox
+            document.addEventListener('keydown', function(e) {
+                if (lightboxModal.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        lightboxModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    } else if (e.key === 'ArrowLeft') {
+                        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                        updateLightbox();
+                    } else if (e.key === 'ArrowRight') {
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        updateLightbox();
+                    }
+                }
+                
+                if (videoModal.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        videoModal.classList.remove('active');
+                        videoIframe.src = '';
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+            });
+            
+            // Add animation to items on scroll
+            function animateItems() {
+                const items = document.querySelectorAll('.gallery-item, .video-item');
+                
+                items.forEach(item => {
+                    const itemPosition = item.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (itemPosition < screenPosition) {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Set initial state for animation
+            const items = document.querySelectorAll('.gallery-item, .video-item');
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Run animation on load and scroll
+            window.addEventListener('load', animateItems);
+            window.addEventListener('scroll', animateItems);
+            
+            // Handle window resize - close mobile menu when resizing to larger screen
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
