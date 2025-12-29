@@ -247,9 +247,8 @@
         }
 
         .contact-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            display: flex;
+            justify-content: center;
             margin-bottom: 60px;
         }
 
@@ -260,6 +259,8 @@
             border-radius: 10px;
             box-shadow: var(--shadow);
             border-top: 4px solid var(--accent);
+            max-width: 800px;
+            width: 100%;
         }
 
         .contact-info h2 {
@@ -268,59 +269,80 @@
             padding-bottom: 15px;
             border-bottom: 3px solid var(--secondary);
             font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #eee;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
         }
 
-        .contact-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .contact-icon {
             background: var(--primary);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
+            margin: 0 auto 20px;
             flex-shrink: 0;
         }
 
         .contact-icon i {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
 
         .contact-details h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             color: var(--primary);
+            text-align: center;
         }
 
         .contact-details p {
             color: var(--gray);
             line-height: 1.6;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         .contact-details a {
             color: var(--secondary);
             text-decoration: none;
             transition: var(--transition);
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 10px;
         }
 
         .contact-details a:hover {
             color: var(--primary-dark);
             text-decoration: underline;
+        }
+
+        .contact-action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         /* Office Hours */
@@ -329,7 +351,7 @@
             color: white;
             padding: 25px;
             border-radius: 8px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .office-hours h3 {
@@ -338,6 +360,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            justify-content: center;
         }
 
         .office-hours h3 i {
@@ -364,65 +387,6 @@
         .hours-table td:last-child {
             text-align: right;
             font-weight: 500;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            border-top: 4px solid var(--secondary);
-        }
-
-        .contact-form h2 {
-            color: var(--primary);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--accent);
-            font-size: 1.8rem;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--primary);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: 'Roboto', sans-serif;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
         }
 
         /* Buttons */
@@ -454,7 +418,6 @@
         .btn-secondary {
             background-color: var(--secondary);
             color: var(--white);
-            margin-left: 15px;
         }
 
         .btn-secondary:hover {
@@ -662,6 +625,10 @@
             .nav-links a {
                 font-size: 0.95rem;
             }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -744,10 +711,6 @@
                 padding: 60px 20px;
             }
             
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
             .map-container iframe {
                 height: 300px;
             }
@@ -766,6 +729,11 @@
             .social-icons {
                 justify-content: center;
             }
+            
+            .contact-action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         @media (max-width: 576px) {
@@ -781,13 +749,11 @@
                 padding: 40px 15px;
             }
             
-            .contact-info,
-            .contact-form {
+            .contact-info {
                 padding: 25px 20px;
             }
             
-            .contact-info h2,
-            .contact-form h2 {
+            .contact-info h2 {
                 font-size: 1.5rem;
             }
             
@@ -822,13 +788,7 @@
             }
             
             .contact-item {
-                flex-direction: column;
                 text-align: center;
-            }
-            
-            .contact-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
             }
         }
 
@@ -837,14 +797,13 @@
                 font-size: 1.6rem;
             }
             
-            .contact-info h2,
-            .contact-form h2 {
+            .contact-info h2 {
                 font-size: 1.3rem;
             }
             
             .contact-icon {
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
             }
         }
     </style>
@@ -869,7 +828,6 @@
                 <li><a href="academics.html">Academics</a></li>
                 <li><a href="activities.html">Activities</a></li>
                 <li><a href="achievements.html">Achievements</a></li>
-             
                 <li><a href="contact.html" class="active">Contact Us</a></li>
             </ul>
         </div>
@@ -888,196 +846,129 @@
         <div class="container">
             <div class="contact-wrapper">
                 <!-- Contact Information -->
-         <div class="contact-info">
-  <h2>Contact Information</h2>
-
-  <!-- Address -->
-  <div class="contact-item">
-    <div class="contact-icon">
-      <i class="fas fa-map-marker-alt"></i>
-    </div>
-    <div class="contact-details">
-      <h3>School Address</h3>
-      <p>
-        Bright Sun Sr. Sec. School<br>
-        Barsar, Mehre<br>
-        Himachal Pradesh – 174305<br>
-        India
-      </p>
-    </div>
-  </div>
-
-  <!-- Phone -->
-  <div class="contact-item">
-    <div class="contact-icon">
-      <i class="fas fa-phone"></i>
-    </div>
-    <div class="contact-details">
-      <h3>Phone Numbers</h3>
-      <p>
-        <strong>Office:</strong>
-        <a href="tel:+919817664300">9817664300</a><br>
-        <strong>Admissions:</strong>
-        <a href="tel:+919817421900">9817421900</a>
-      </p>
-      <p style="margin-top: 10px;">
-        <a href="tel:+919817664300">
-          <i class="fas fa-phone"></i> Call Now
-        </a>
-      </p>
-    </div>
-  </div>
-
-  <!-- Email -->
-  <div class="contact-item">
-    <div class="contact-icon">
-      <i class="fas fa-envelope"></i>
-    </div>
-    <div class="contact-details">
-      <h3>Email Address</h3>
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:brightsunsssmehre@gmail.com">
-          brightsunsssmehre@gmail.com
-        </a>
-      </p>
-      <p style="margin-top: 10px;">
-        <a href="mailto:brightsunsssmehre@gmail.com">
-          <i class="fas fa-envelope"></i> Send Email
-        </a>
-      </p>
-    </div>
-  </div>
-
-  <!-- School Hours -->
-  <div class="contact-item">
-    <div class="contact-icon">
-      <i class="fas fa-clock"></i>
-    </div>
-    <div class="contact-details">
-      <h3>School Hours</h3>
-      <p>
-        <strong>Monday – Friday:</strong> 8:00 AM – 3:00 PM<br>
-        <strong>Saturday:</strong> 8:00 AM – 1:00 PM<br>
-        <strong>Sunday:</strong> Closed
-      </p>
-    </div>
-  </div>
-
-  <!-- Office Hours -->
-  <div class="office-hours">
-    <h3><i class="fas fa-user-clock"></i> Office Hours for Visitors</h3>
-    <table class="hours-table">
-      <tr>
-        <td>Monday – Friday</td>
-        <td>9:00 AM – 1:00 PM</td>
-      </tr>
-      <tr>
-        <td>Saturday</td>
-        <td>9:00 AM – 12:00 PM</td>
-      </tr>
-      <tr>
-        <td>Sunday & Holidays</td>
-        <td>Closed</td>
-      </tr>
-    </table>
-    <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.9;">
-      <i class="fas fa-info-circle"></i>
-      For appointment, please call in advance
-    </p>
-  </div>
-</div>
-
-                
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <h2>Send Us a Message</h2>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="contact-grid">
+                        <!-- Address -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                            <div class="contact-details">
+                                <h3>School Address</h3>
+                                <p>
+                                    Bright Sun Sr. Sec. School<br>
+                                    Barsar, Mehre<br>
+                                    Himachal Pradesh – 174305<br>
+                                    India
+                                </p>
                             </div>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+
+                        <!-- Phone -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="studentClass">Student Class (if applicable)</label>
-                                <select id="studentClass" name="studentClass">
-                                    <option value="">Select class</option>
-                                    <option value="nursery">Nursery</option>
-                                    <option value="kg">KG</option>
-                                    <option value="1">Class 1</option>
-                                    <option value="2">Class 2</option>
-                                    <option value="3">Class 3</option>
-                                    <option value="4">Class 4</option>
-                                    <option value="5">Class 5</option>
-                                    <option value="6">Class 6</option>
-                                    <option value="7">Class 7</option>
-                                    <option value="8">Class 8</option>
-                                    <option value="9">Class 9</option>
-                                    <option value="10">Class 10</option>
-                                    <option value="11">Class 11</option>
-                                    <option value="12">Class 12</option>
-                                    <option value="parent">Parent/Guardian</option>
-                                    <option value="other">Other</option>
-                                </select>
+                            <div class="contact-details">
+                                <h3>Phone Numbers</h3>
+                                <p>
+                                    <strong>Office:</strong><br>
+                                    <a href="tel:+919817664300">9817664300</a>
+                                </p>
+                                <p>
+                                    <strong>Admissions:</strong><br>
+                                    <a href="tel:+919817421900">9817421900</a>
+                                </p>
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select subject</option>
-                                <option value="admission">Admission Enquiry</option>
-                                <option value="academic">Academic Query</option>
-                                <option value="fee">Fee Related</option>
-                                <option value="transport">Transport Facility</option>
-                                <option value="feedback">Feedback/Suggestion</option>
-                                <option value="complaint">Complaint</option>
-                                <option value="other">Other</option>
-                            </select>
+
+                        <!-- Email -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email Address</h3>
+                                <p>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:brightsunsssmehre@gmail.com">
+                                        brightsunsssmehre@gmail.com
+                                    </a>
+                                </p>
+                            </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
+
+                        <!-- School Hours -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>School Hours</h3>
+                                <p>
+                                    <strong>Monday – Friday:</strong><br>
+                                    8:00 AM – 3:00 PM
+                                </p>
+                                <p>
+                                    <strong>Saturday:</strong><br>
+                                    8:00 AM – 1:00 PM
+                                </p>
+                                <p>
+                                    <strong>Sunday:</strong><br>
+                                    Closed
+                                </p>
+                            </div>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                        
-                        <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray); text-align: center;">
-                            We'll respond to your query within 24 hours
+                    </div>
+                    
+                    <div class="contact-action-buttons">
+                        <a href="tel:+919817664300" class="btn btn-primary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="mailto:brightsunsssmehre@gmail.com" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Send Email
+                        </a>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="office-hours">
+                        <h3><i class="fas fa-user-clock"></i> Office Hours for Visitors</h3>
+                        <table class="hours-table">
+                            <tr>
+                                <td>Monday – Friday</td>
+                                <td>9:00 AM – 1:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>9:00 AM – 12:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday & Holidays</td>
+                                <td>Closed</td>
+                            </tr>
+                        </table>
+                        <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.9; text-align: center;">
+                            <i class="fas fa-info-circle"></i>
+                            For appointment, please call in advance
                         </p>
-                    </form>
+                    </div>
                 </div>
             </div>
             
             <!-- Map Section -->
             <div class="map-container">
                 <h2 class="section-title" style="margin-bottom: 20px;">Our Location</h2>
-             <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.402027279778!2d75.7486027!3d26.9325324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db36df4fedd2f%3A0x90a9e91d3f434cb3!2sBright%20Sun%20Sr.%20Sec.%20School!5e0!3m2!1sen!2sin!4v1703500000000!5m2!1sen!2sin"
-  width="600"
-  height="450"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.402027279778!2d75.7486027!3d26.9325324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db36df4fedd2f%3A0x90a9e91d3f434cb3!2sBright%20Sun%20Sr.%20Sec.%20School!5e0!3m2!1sen!2sin!4v1703500000000!5m2!1sen!2sin"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
@@ -1111,18 +1002,16 @@
                     <p><i class="fas fa-phone"></i> 9817664300, 9817421900</p>
                     <p><i class="fas fa-envelope"></i> info@brightsunschool.in</p>
                     <p><i class="fas fa-map-marker-alt"></i> Barsar, Mehre, Himachal Pradesh - 174305</p>
-                    
-               
                 </div>
             </div>
             
             <div class="copyright">
                 <p>&copy; 2025 Bright Sun Sr. Sec. School. All Rights Reserved.</p>
-             <p>
-  Website designed for educational purposes.  
-  For website development, contact <strong>Shiv</strong> 
-  All rights reserved.
-</p>
+                <p>
+                    Website designed for educational purposes.  
+                    For website development, contact <strong>Shiv</strong> 
+                    All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
@@ -1253,33 +1142,6 @@
                     link.classList.add('active');
                 }
             });
-            
-            // Form submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    
-                    // Get form values
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const phone = document.getElementById('phone').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-                    
-                    // Simple validation
-                    if (!name || !email || !phone || !subject || !message) {
-                        alert('Please fill all required fields!');
-                        return;
-                    }
-                    
-                    // Show success message
-                    alert(`Thank you ${name}! Your message has been sent successfully.\nWe will contact you at ${phone} or ${email} within 24 hours.`);
-                    
-                    // Reset form
-                    contactForm.reset();
-                });
-            }
             
             // Handle window resize - close mobile menu when resizing to larger screen
             window.addEventListener('resize', function() {
