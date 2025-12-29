@@ -26,8 +26,8 @@
     <style>
         /* For modern browsers */
 ::selection {
-  background-color: #0A1F44; /* selection background */
-  color: #ffffff;            /* selected text color */
+  background-color: #0A1F44;
+  color: #ffffff;
 }
 
 /* For Firefox */
@@ -44,10 +44,10 @@
         }
 
         :root {
-            --primary: #2c5aa0; /* Blue */
+            --primary: #2c5aa0;
             --primary-dark: #1e3a6f;
-            --secondary: #c62828; /* Red */
-            --accent: #fbc02d; /* Yellow */
+            --secondary: #c62828;
+            --accent: #fbc02d;
             --light: #f8f9fa;
             --dark: #333333;
             --gray: #666666;
@@ -185,7 +185,7 @@
             padding: 150px 20px 80px;
             text-align: center;
             color: var(--white);
-            margin-bottom: 60px;
+            margin-top: 70px;
         }
 
         .page-header h1 {
@@ -201,26 +201,21 @@
             opacity: 0.9;
         }
 
-        /* ===== ABOUT INTRO SECTION ===== */
-        .about-intro {
-            padding: 60px 20px;
+        /* ===== ABOUT HERO SECTION ===== */
+        .about-hero {
+            padding: 80px 20px;
             background-color: var(--white);
             margin-bottom: 60px;
         }
 
-        .about-content {
+        .hero-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
             flex-wrap: wrap;
         }
 
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-image {
+        .hero-image {
             flex: 1;
             min-width: 300px;
             border-radius: 10px;
@@ -229,26 +224,31 @@
             border: 5px solid var(--primary);
         }
 
-        .about-image img {
+        .hero-image img {
             width: 100%;
             height: auto;
             display: block;
             transition: var(--transition);
         }
 
-        .about-image img:hover {
+        .hero-image img:hover {
             transform: scale(1.02);
         }
 
-        .about-text h2 {
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h2 {
             font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             position: relative;
             display: inline-block;
         }
 
-        .about-text h2::after {
+        .hero-text h2::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -259,7 +259,7 @@
             border-radius: 2px;
         }
 
-        .about-text p {
+        .hero-text p {
             font-size: 1.1rem;
             color: var(--gray);
             margin-bottom: 25px;
@@ -309,113 +309,86 @@
             margin-bottom: 20px;
         }
 
-        /* ===== HISTORY TIMELINE ===== */
-        .history {
+        /* ===== SCHOOL JOURNEY SECTION ===== */
+        .school-journey {
             padding: 80px 20px;
             background-color: var(--white);
             margin-bottom: 60px;
         }
 
-        .timeline {
+        .journey-content {
+            text-align: center;
             max-width: 800px;
-            margin: 50px auto 0;
-            position: relative;
+            margin: 0 auto;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background-color: var(--primary);
+        .journey-content p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
         }
 
-        .timeline-item {
-            margin-bottom: 50px;
-            position: relative;
-            width: 45%;
+        .journey-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .timeline-item:nth-child(odd) {
-            margin-left: 0;
-            margin-right: auto;
+        .stat-item {
+            text-align: center;
+            padding: 25px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: var(--transition);
+            border-top: 3px solid var(--secondary);
         }
 
-        .timeline-item:nth-child(even) {
-            margin-left: auto;
-            margin-right: 0;
+        .stat-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
         }
 
-        .timeline-content {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            position: relative;
-            border: 2px solid var(--accent);
+        .stat-item:hover .stat-number,
+        .stat-item:hover .stat-title {
+            color: white;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            content: '';
-            position: absolute;
-            right: -10px;
-            top: 20px;
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 10px solid var(--accent);
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::after {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 20px;
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-right: 10px solid var(--accent);
-        }
-
-        .timeline-year {
-            position: absolute;
-            top: 0;
-            background: var(--secondary);
-            color: var(--white);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            z-index: 2;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-year {
-            right: -70px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-year {
-            left: -70px;
-        }
-
-        .timeline-content h3 {
-            color: var(--primary);
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary);
             margin-bottom: 10px;
-            font-size: 1.3rem;
+        }
+
+        .stat-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 600;
         }
 
         /* ===== LEADERSHIP SECTION ===== */
         .leadership {
             padding: 80px 20px;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e8eff7 100%);
+            background-color: var(--white);
             margin-bottom: 60px;
+        }
+
+        .leadership-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         .leadership-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
             margin-top: 50px;
         }
@@ -428,6 +401,9 @@
             transition: var(--transition);
             text-align: center;
             border-top: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .leader-card:hover {
@@ -436,8 +412,8 @@
         }
 
         .leader-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             overflow: hidden;
             margin: 0 auto 20px;
@@ -459,58 +435,31 @@
         .leader-card h3 {
             color: var(--primary);
             margin-bottom: 10px;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .leader-card .position {
             color: var(--secondary);
             font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        /* ===== VALUES SECTION ===== */
-        .values {
-            padding: 80px 20px;
-            background-color: var(--white);
-            margin-bottom: 60px;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .value-card {
-            text-align: center;
-            padding: 40px 25px;
-            border-radius: 10px;
-            background-color: var(--white);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid #f0f0f0;
-            border-top: 4px solid var(--accent);
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-
-        .value-card i {
-            font-size: 3rem;
-            color: var(--secondary);
             margin-bottom: 20px;
-            display: block;
+            font-size: 1.2rem;
         }
 
-        .value-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary);
+        .leader-message {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .founder-message, .principal-message {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin-top: 20px;
         }
 
         /* ===== SECTION TITLE STYLES ===== */
@@ -518,7 +467,7 @@
             text-align: center;
             font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             position: relative;
         }
 
@@ -811,7 +760,7 @@
                 font-size: 0.95rem;
             }
             
-            .about-text h2 {
+            .hero-text h2 {
                 font-size: 2rem;
             }
         }
@@ -897,11 +846,11 @@
                 font-size: 2rem;
             }
             
-            .about-content {
+            .hero-content {
                 flex-direction: column;
             }
             
-            .about-text, .about-image {
+            .hero-text, .hero-image {
                 width: 100%;
             }
             
@@ -939,6 +888,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .journey-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -968,7 +921,7 @@
                 font-size: 1.8rem;
             }
             
-            .about-text h2 {
+            .hero-text h2 {
                 font-size: 1.8rem;
             }
             
@@ -1015,17 +968,17 @@
                 margin-right: auto;
             }
             
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .mv-card, .leader-card, .value-card {
+            .mv-card, .leader-card {
                 padding: 25px 15px;
             }
             
             .leader-img {
-                width: 120px;
-                height: 120px;
+                width: 150px;
+                height: 150px;
+            }
+            
+            .journey-stats {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1040,6 +993,10 @@
             
             .logo-sub {
                 font-size: 0.7rem;
+            }
+            
+            .leadership-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1075,9 +1032,10 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html" class="active">About Us</a></li>
                 <li><a href="academics.html">Academics</a></li>
-                <li><a href="infrastructure.html">Infrastructure</a></li>
+                <li><a href="activities.html">Activities</a></li>
+             
                 <li><a href="achievements.html">Achievements</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
@@ -1086,24 +1044,61 @@
     <!-- ===== PAGE HEADER ===== -->
     <section class="page-header">
         <div class="container">
-            <h1>About Bright Sun School</h1>
-            <p>Illuminating Minds Since 1987 - A Legacy of Excellence in Education</p>
+            <h1>About Bright Sun</h1>
+            <p>Building Future Citizens Since 1987</p>
         </div>
     </section>
 
-    <!-- ===== ABOUT INTRO SECTION ===== -->
-    <section class="about-intro">
+    <!-- ===== ABOUT HERO SECTION ===== -->
+    <section class="about-hero">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>Established in 1987, Bright Sun Senior Secondary School has been a beacon of quality education in Barsar, Himachal Pradesh. From humble beginnings with just a handful of students, we have grown into a premier educational institution nurturing thousands of young minds.</p>
-                    <p>Our journey of 25+ years is marked by consistent academic excellence, holistic development of students, and a commitment to providing affordable quality education to the children of Barsar and surrounding areas.</p>
-                    <p>Affiliated with the Himachal Pradesh Board of School Education, we offer education from Nursery to Class 12th, focusing on both academic rigor and character building.</p>
-                    <a href="contact.html" class="btn btn-primary">Visit Our Campus</a>
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="../assets/images/gallery/home.jpg" alt="Bright Sun School Building">
                 </div>
-                <div class="about-image">
-                    <img src="../assets/images/gallery/about1.jpg" alt="School Campus">
+                <div class="hero-text">
+                    <h2>Our School</h2>
+                    <p>Located in the beautiful surroundings of Barsar, Himachal Pradesh, Bright Sun Senior Secondary School, Mehre is dedicated to nurturing future citizens through quality education and holistic development.</p>
+                    <p>Our journey of 38+ years is focused on academic excellence, character building, and creating responsible individuals who contribute positively to society.</p>
+                    <p>We offer comprehensive education from Playway to 12th grade, ensuring a strong foundation for every student's future.</p>
+                    <a href="gallery.html" class="btn btn-primary">View Our Campus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== LEADERSHIP SECTION ===== -->
+    <section class="leadership">
+        <div class="container">
+            <h2 class="section-title">Our Leadership</h2>
+            <div class="leadership-intro">
+                <p>Meet the visionaries who have guided Bright Sun School through its journey of educational excellence and community service.</p>
+            </div>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <img src="../assets/images/gallery/Principal.jpg" alt="Principal Mrs. Avinash Rana">
+                    </div>
+                    <h3>Mrs. Avinash Rana</h3>
+                    <p class="position">Principal</p>
+                    
+                    <div class="principal-message">
+                        <p>"At Bright Sun Senior Secondary School, Mehre, we believe that education goes beyond textbooks and examinations—it is about shaping character, nurturing values, and building confident individuals. I have had the honour of serving this institution since 1993, and over these 32 years, I have witnessed the school grow into a center of academic excellence and holistic development. With the dedicated efforts of our teachers and the continued support of parents, we remain committed to creating a nurturing environment where every child is encouraged to discover their potential and grow into a responsible citizen of tomorrow."</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-img">
+                        <img src="../assets/images/gallery/Founder.jpg" alt="Founder Mr. R.K. Rana">
+                    </div>
+                    <h3>Mr. R.K. Rana</h3>
+                    <p class="position">Founder & Chairman</p>
+                    
+                    <div class="founder-message">
+                        <p>"Bright Sun Senior Secondary School, Mehre was founded in 1987, when I was just 23 years old, with a simple yet strong belief that education has the power to shape lives and society. What began as a humble initiative has grown into a trusted institution known for academic excellence, strong values, and holistic development. Over the years, our students have achieved success across diverse fields, bringing pride to the school and the community. This journey of more than three decades continues with the same dedication—to provide quality, affordable education and to nurture responsible, confident citizens for the future."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1117,135 +1112,19 @@
                 <div class="mv-card">
                     <i class="fas fa-bullseye"></i>
                     <h3>Our Mission</h3>
-                    <p>Our mission is all around development of students by providing quality in education, that can empower students to become confident, competent and responsible citizens, who value education as a lifelong process. Please do visit here and be the part of Bright Sun Family. Together, we're on a path to success.</p>
+                    <p>Our mission is all around development of students by providing quality in education, that can empower students to become confident, competent and responsible citizens, who value education as a lifelong process.</p>
                 </div>
                 
                 <div class="mv-card">
                     <i class="fas fa-eye"></i>
                     <h3>Our Vision</h3>
-                    <p>Our vision is to develop and implement curriculum based on needs and to make learning an enjoyable and exciting experience.</p>
+                    <p>Our vision is to develop and implement curriculum based on needs and to make learning an enjoyable and exciting experience that prepares students for future challenges.</p>
                 </div>
                 
                 <div class="mv-card">
                     <i class="fas fa-handshake"></i>
                     <h3>Our Philosophy</h3>
                     <p>Every child is unique and has potential. Our philosophy centers on individualized attention, experiential learning, and creating a supportive environment where every student can shine.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== HISTORY TIMELINE ===== -->
-    <section class="history">
-        <div class="container">
-            <h2 class="section-title">Our Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">1987</div>
-                    <div class="timeline-content">
-                        <h3>Foundation</h3>
-                        <p>Bright Sun School was established in Barsar with just 50 students and 5 teachers, starting with primary classes only.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2000</div>
-                    <div class="timeline-content">
-                        <h3>First Batch of Class 10</h3>
-                        <p>Our first batch of Class 10 students appeared for board exams with 100% pass rate, marking our entry into secondary education.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2005</div>
-                    <div class="timeline-content">
-                        <h3>Senior Secondary Expansion</h3>
-                        <p>School expanded to include Senior Secondary classes (10+2) with Science and Commerce streams, becoming a complete K-12 institution.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2012</div>
-                    <div class="timeline-content">
-                        <h3>First Merit Position</h3>
-                        <p>Our student secured 13th rank in HP Board Merit list (Class 10+2), establishing our reputation for academic excellence.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-content">
-                        <h3>Digital Transformation</h3>
-                        <p>Complete digital upgrade with smart classrooms, computer labs, and digital learning resources for all students.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <h3>25 Years Celebration</h3>
-                        <p>Celebrated 25 years of educational excellence with 1000+ successful alumni and consistent top rankings in board results.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== LEADERSHIP SECTION ===== -->
-    <section class="leadership">
-        <div class="container">
-            <h2 class="section-title">Our Leadership</h2>
-            <div class="leadership-grid">
-                <div class="leader-card">
-                    <div class="leader-img">
-                        <img src="../assets/images/gallery/Principal.jpg" alt="Principal">
-                    </div>
-                    <h3>Mrs. Avinash Rana</h3>
-                    <p class="position">Principal</p>
-                    <p>With 20+ years of experience in education, Mr. Sharma has been leading Bright Sun School since 2010, focusing on academic excellence and holistic development.</p>
-                </div>
-                
-                
-                
-                <div class="leader-card">
-                    <div class="leader-img">
-                        <img src="../assets/images/gallery/img1.jpg" alt="Founder">
-                    </div>
-                    <h3>Mr. R.K Rana</h3>
-                    <p class="position">Founder & Chairman</p>
-                    <p>The visionary behind Bright Sun School, Mr. Kumar established the institution in 1987 with the aim of providing quality education in rural Himachal.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== VALUES SECTION ===== -->
-    <section class="values">
-        <div class="container">
-            <h2 class="section-title">Our Core Values</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Academic Excellence</h3>
-                    <p>We maintain high academic standards while encouraging curiosity and love for learning.</p>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-heart"></i>
-                    <h3>Character Building</h3>
-                    <p>We focus on developing integrity, empathy, and social responsibility in every student.</p>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Inclusive Community</h3>
-                    <p>We welcome students from all backgrounds and provide equal opportunities for growth.</p>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovation</h3>
-                    <p>We embrace modern teaching methods while preserving time-tested educational values.</p>
                 </div>
             </div>
         </div>
@@ -1270,7 +1149,7 @@
                         <li><a href="about.html">About School</a></li>
                         <li><a href="academics.html">Academics</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="infrastructure.html">Infrastructure</a></li>
+                        <li><a href="activities.html">Activities</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -1280,17 +1159,16 @@
                     <p><i class="fas fa-phone"></i> 9817664300, 9817421900</p>
                     <p><i class="fas fa-envelope"></i> info@brightsunschool.in</p>
                     <p><i class="fas fa-map-marker-alt"></i> Barsar, Mehre, Himachal Pradesh - 174305</p>
-             
                 </div>
             </div>
             
             <div class="copyright">
                 <p>&copy; 2025 Bright Sun Sr. Sec. School. All Rights Reserved.</p>
-                    <p>
-  Website designed for educational purposes.  
-  For website development, contact <strong>Shiv</strong> 
-  All rights reserved.
-</p>
+                <p>
+                    Website designed for educational purposes.  
+                    For website development, contact <strong>Shiv</strong> 
+                    All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
@@ -1423,22 +1301,50 @@
                 }
             });
             
-            // Add smooth scrolling to all anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+      
+            // Animate stat items on scroll
+            function animateStats() {
+                const statItems = document.querySelectorAll('.stat-item');
+                const screenPosition = window.innerHeight * 0.8;
+                
+                statItems.forEach((item, index) => {
+                    const itemPosition = item.getBoundingClientRect().top;
                     
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+                    if (itemPosition < screenPosition) {
+                        // Add delay for each item
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 100);
                     }
                 });
+            }
+            
+            // Set initial state for stat items
+            const statItems = document.querySelectorAll('.stat-item');
+            statItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Set initial state for timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Run animations on load and scroll
+            window.addEventListener('load', function() {
+                animateTimeline();
+                animateStats();
+            });
+            
+            window.addEventListener('scroll', function() {
+                animateTimeline();
+                animateStats();
             });
             
             // Handle window resize - close mobile menu when resizing to larger screen
@@ -1449,24 +1355,6 @@
                     document.body.style.overflow = 'auto';
                 }
             });
-            
-            // Timeline animation on scroll
-            function animateTimeline() {
-                const timelineItems = document.querySelectorAll('.timeline-item');
-                const screenPosition = window.innerHeight * 0.8;
-                
-                timelineItems.forEach(item => {
-                    const itemPosition = item.getBoundingClientRect().top;
-                    
-                    if (itemPosition < screenPosition) {
-                        item.classList.add('visible');
-                    }
-                });
-            }
-            
-            // Run animation on load and scroll
-            window.addEventListener('load', animateTimeline);
-            window.addEventListener('scroll', animateTimeline);
         });
     </script>
 </body>

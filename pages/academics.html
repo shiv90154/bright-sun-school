@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academics - Bright Sun Sr. Sec. School</title>
     
-   
     <!-- Favicon -->
     <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -18,24 +17,24 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <script>
-  document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  });
-</script>
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+    </script>
 
     <!-- Academics Page CSS -->
     <style>
         /* For modern browsers */
-::selection {
-  background-color: #0A1F44; /* selection background */
-  color: #ffffff;            /* selected text color */
-}
+        ::selection {
+            background-color: #0A1F44; /* selection background */
+            color: #ffffff;            /* selected text color */
+        }
 
-/* For Firefox */
-::-moz-selection {
-  background-color: #0A1F44;
-  color: #ffffff;
-}
+        /* For Firefox */
+        ::-moz-selection {
+            background-color: #0A1F44;
+            color: #ffffff;
+        }
 
         /* ===== BASE STYLES ===== */
         * {
@@ -476,21 +475,21 @@
             line-height: 1.6;
         }
 
-        /* ===== CO-CURRICULAR ACTIVITIES ===== */
-        .co-curricular {
+        /* ===== GAMES & SPORTS ===== */
+        .games-sports {
             padding: 80px 20px;
             background-color: var(--white);
             margin-bottom: 60px;
         }
 
-        .activities-grid {
+        .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
 
-        .activity-card {
+        .game-card {
             text-align: center;
             padding: 40px 25px;
             border-radius: 10px;
@@ -501,20 +500,20 @@
             border-top: 4px solid var(--accent);
         }
 
-        .activity-card:hover {
+        .game-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             border-color: var(--primary);
         }
 
-        .activity-card i {
+        .game-card i {
             font-size: 3rem;
             color: var(--secondary);
             margin-bottom: 20px;
             display: block;
         }
 
-        .activity-card h3 {
+        .game-card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
             color: var(--primary);
@@ -1011,15 +1010,15 @@
                 margin-right: auto;
             }
             
-            .activities-grid {
+            .games-grid {
                 grid-template-columns: 1fr;
             }
             
-            .structure-card, .exam-card, .activity-card {
+            .structure-card, .exam-card, .game-card {
                 padding: 25px 15px;
             }
             
-            .structure-card i, .exam-card i, .activity-card i {
+            .structure-card i, .exam-card i, .game-card i {
                 font-size: 2.5rem;
             }
             
@@ -1043,13 +1042,13 @@
         }
 
         /* Animation for cards */
-        .structure-card, .exam-card, .activity-card {
+        .structure-card, .exam-card, .game-card {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .structure-card.visible, .exam-card.visible, .activity-card.visible {
+        .structure-card.visible, .exam-card.visible, .game-card.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1074,9 +1073,9 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="academics.html" class="active">Academics</a></li>
-                <li><a href="infrastructure.html">Infrastructure</a></li>
+                <li><a href="activities.html">Activities</a></li>
                 <li><a href="achievements.html">Achievements</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+              
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
@@ -1086,7 +1085,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Academics at Bright Sun</h1>
-            <p>Excellence in Education: Nurturing Minds, Building Futures with Comprehensive Curriculum and Holistic Development</p>
+            <p>Excellence in Education: Nurturing Minds, Building Futures with Comprehensive Curriculum from Playway to Class 12th</p>
         </div>
     </section>
 
@@ -1096,9 +1095,9 @@
             <div class="overview-content">
                 <div class="overview-text">
                     <h2>Our Academic Philosophy</h2>
-                    <p>At Bright Sun Sr. Sec. School, we believe in providing a balanced education that combines academic excellence with holistic development. Our curriculum is designed to challenge students intellectually while nurturing their creative and social skills.</p>
-                    <p>Affiliated with the Himachal Pradesh Board of School Education, we follow a comprehensive curriculum that prepares students for both board examinations and life beyond school. Our teaching methodology emphasizes conceptual understanding, critical thinking, and practical application of knowledge.</p>
-                    <p>We offer education from Nursery to Class 12th, with special emphasis on foundational learning in primary years, skill development in middle school, and career-focused specialization in senior secondary classes.</p>
+                    <p>At Bright Sun Sr. Sec. School, we focus on holistic development with special emphasis on <strong>social skills</strong>. Our curriculum is designed to challenge students intellectually while nurturing their creative, social, and emotional growth.</p>
+                    <p>Affiliated with the Himachal Pradesh Board of School Education, we provide comprehensive education from <strong>Playway to Class 12th</strong>. Our teaching methodology emphasizes conceptual understanding, critical thinking, and practical application of knowledge.</p>
+                    <p>We offer specialized preparation for <strong>NEET/JEE</strong> and include <strong>Physical Education</strong> and <strong>NSS unit</strong> activities in our senior secondary program to ensure well-rounded development.</p>
                     <a href="contact.html" class="btn btn-primary">Contact for Admissions</a>
                 </div>
                 <div class="overview-image">
@@ -1116,13 +1115,13 @@
                 <div class="structure-card">
                     <i class="fas fa-school"></i>
                     <h3>Primary School</h3>
-                    <p>Nursery to Class 5</p>
+                    <p>Playway to Class 5</p>
                     <ul>
                         <li><i class="fas fa-check"></i> Foundation in Languages (English, Hindi)</li>
                         <li><i class="fas fa-check"></i> Basic Mathematics & EVS</li>
                         <li><i class="fas fa-check"></i> Creative Arts & Music</li>
-                        <li><i class="fas fa-check"></i> Physical Education</li>
                         <li><i class="fas fa-check"></i> Activity-based Learning</li>
+                        <li><i class="fas fa-check"></i> Social Skills Development</li>
                     </ul>
                 </div>
                 
@@ -1131,11 +1130,11 @@
                     <h3>Middle School</h3>
                     <p>Class 6 to Class 8</p>
                     <ul>
-                        <li><i class="fas fa-check"></i> English, Hindi, Sanskrit</li>
+                        <li><i class="fas fa-check"></i> English, Hindi, <strong>Sanskrit</strong></li>
                         <li><i class="fas fa-check"></i> Mathematics & Science</li>
                         <li><i class="fas fa-check"></i> Social Studies</li>
                         <li><i class="fas fa-check"></i> Computer Education</li>
-                        <li><i class="fas fa-check"></i> Introduction to Third Language</li>
+                        <li><i class="fas fa-check"></i> Moral Science</li>
                     </ul>
                 </div>
                 
@@ -1145,10 +1144,10 @@
                     <p>Class 9 to Class 12</p>
                     <ul>
                         <li><i class="fas fa-check"></i> Science Stream (PCM/PCB)</li>
-                        <li><i class="fas fa-check"></i> Commerce Stream</li>
-                        <li><i class="fas fa-check"></i> Mathematics & Computer Science</li>
+                        <li><i class="fas fa-check"></i> <strong>Physical Education</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>NSS Unit Activities</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>NEET/JEE Preparation</strong></li>
                         <li><i class="fas fa-check"></i> Board Exam Preparation</li>
-                        <li><i class="fas fa-check"></i> Career Counseling</li>
                     </ul>
                 </div>
             </div>
@@ -1183,9 +1182,9 @@
                         <div class="subject-list">
                             <div class="subject-item">Drawing & Painting</div>
                             <div class="subject-item">Music</div>
-                            <div class="subject-item">Physical Education</div>
                             <div class="subject-item">General Knowledge</div>
                             <div class="subject-item">Computer Basics</div>
+                            <div class="subject-item">Social Skills</div>
                         </div>
                     </div>
                 </div>
@@ -1196,7 +1195,7 @@
                         <div class="subject-list">
                             <div class="subject-item">English</div>
                             <div class="subject-item">Hindi</div>
-                            <div class="subject-item">Sanskrit</div>
+                            <div class="subject-item"><strong>Sanskrit</strong></div>
                         </div>
                     </div>
                     
@@ -1213,9 +1212,8 @@
                         <h4>Additional Subjects</h4>
                         <div class="subject-list">
                             <div class="subject-item">Computer Science</div>
-                            <div class="subject-item">Art & Craft</div>
-                            <div class="subject-item">Physical Education</div>
                             <div class="subject-item">Moral Science</div>
+                            <div class="subject-item">Social Skills</div>
                         </div>
                     </div>
                 </div>
@@ -1229,14 +1227,14 @@
                             <div class="subject-item">Mathematics</div>
                             <div class="subject-item">Science</div>
                             <div class="subject-item">Social Science</div>
+                            <div class="subject-item"><strong>Sanskrit</strong></div>
                         </div>
                     </div>
                     
                     <div class="subject-category">
-                        <h4>Optional Subjects</h4>
+                        <h4>Additional Subjects</h4>
                         <div class="subject-list">
                             <div class="subject-item">Computer Applications</div>
-                            <div class="subject-item">Art Education</div>
                             <div class="subject-item">Physical & Health Education</div>
                         </div>
                     </div>
@@ -1244,24 +1242,24 @@
                 
                 <div class="tab-content" id="senior-tab">
                     <div class="subject-category">
-                        <h4>Science Stream</h4>
+                        <h4>Science Stream (Class 11-12)</h4>
                         <div class="subject-list">
                             <div class="subject-item">Physics</div>
                             <div class="subject-item">Chemistry</div>
                             <div class="subject-item">Biology/Mathematics</div>
                             <div class="subject-item">English</div>
                             <div class="subject-item">Computer Science</div>
+                            <div class="subject-item"><strong>Physical Education</strong></div>
                         </div>
                     </div>
                     
                     <div class="subject-category">
-                        <h4>Commerce Stream</h4>
+                        <h4>Special Programs</h4>
                         <div class="subject-list">
-                            <div class="subject-item">Accountancy</div>
-                            <div class="subject-item">Business Studies</div>
-                            <div class="subject-item">Economics</div>
-                            <div class="subject-item">English</div>
-                            <div class="subject-item">Mathematics/Informatics Practices</div>
+                            <div class="subject-item"><strong>NSS Unit Activities</strong></div>
+                            <div class="subject-item"><strong>NEET/JEE Preparation</strong></div>
+                            <div class="subject-item">Board Exam Coaching</div>
+                            <div class="subject-item">Career Counseling</div>
                         </div>
                     </div>
                 </div>
@@ -1283,6 +1281,7 @@
                         <li>Project Work Assessment</li>
                         <li>Class Participation Evaluation</li>
                         <li>Homework & Assignment Checks</li>
+                        <li>Social Skills Assessment</li>
                     </ol>
                 </div>
                 
@@ -1300,12 +1299,12 @@
                 
                 <div class="exam-card">
                     <i class="fas fa-trophy"></i>
-                    <h3>Board Examinations</h3>
-                    <p>Preparation and guidance for HP Board Examinations for Classes 10 and 12 with special focus on merit achievement.</p>
+                    <h3>Board & Competitive Exams</h3>
+                    <p>Preparation and guidance for HP Board Examinations and competitive exams like NEET/JEE.</p>
                     <ol>
                         <li>Special Revision Classes</li>
                         <li>Mock Board Examinations</li>
-                        <li>Doubt Clearing Sessions</li>
+                        <li>NEET/JEE Test Series</li>
                         <li>Time Management Training</li>
                     </ol>
                 </div>
@@ -1313,33 +1312,27 @@
         </div>
     </section>
 
-    <!-- ===== CO-CURRICULAR ACTIVITIES ===== -->
-    <section class="co-curricular">
+    <!-- ===== GAMES & SPORTS ===== -->
+    <section class="games-sports">
         <div class="container">
-            <h2 class="section-title">Co-curricular Activities</h2>
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Art & Craft</h3>
-                    <p>Creative expression through drawing, painting, clay modeling, and craft activities to develop artistic skills.</p>
+            <h2 class="section-title">Games & Sports</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <i class="fas fa-table-tennis"></i>
+                    <h3>Badminton</h3>
+                    <p>Indoor and outdoor badminton courts for students to develop agility, coordination, and sportsmanship.</p>
                 </div>
                 
-                <div class="activity-card">
-                    <i class="fas fa-music"></i>
-                    <h3>Music & Dance</h3>
-                    <p>Training in vocal music, instrumental music, and various dance forms to nurture cultural appreciation.</p>
-                </div>
-                
-                <div class="activity-card">
+                <div class="game-card">
                     <i class="fas fa-running"></i>
-                    <h3>Sports & Games</h3>
-                    <p>Regular sports activities including cricket, basketball, badminton, and athletics for physical fitness.</p>
+                    <h3>Kho-Kho</h3>
+                    <p>Traditional Indian sport that builds teamwork, speed, strategic thinking, and physical endurance.</p>
                 </div>
                 
-                <div class="activity-card">
-                    <i class="fas fa-microphone"></i>
-                    <h3>Debate & Elocution</h3>
-                    <p>Platforms for public speaking, debates, and discussions to enhance communication skills and confidence.</p>
+                <div class="game-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Kabaddi</h3>
+                    <p>Traditional Indian contact sport that builds strength, agility, teamwork, and quick decision-making.</p>
                 </div>
             </div>
         </div>
@@ -1354,7 +1347,7 @@
                     <h2>Bright<span>Sun</span> Sr. Sec. School</h2>
                     <p>Barsar, Mehre, Himachal Pradesh</p>
                     <p>Affiliated with HP Board of School Education</p>
-                    <p>Established in 1987 • Nursery to 12th</p>
+                    <p>Established in 1987 • Playway to 12th</p>
                 </div>
                 
                 <div class="footer-links">
@@ -1374,18 +1367,16 @@
                     <p><i class="fas fa-phone"></i> 9817664300, 9817421900</p>
                     <p><i class="fas fa-envelope"></i> info@brightsunschool.in</p>
                     <p><i class="fas fa-map-marker-alt"></i> Barsar, Mehre, Himachal Pradesh - 174305</p>
-                    
-             
                 </div>
             </div>
             
             <div class="copyright">
                 <p>&copy; 2025 Bright Sun Sr. Sec. School. All Rights Reserved.</p>
-                      <p>
-  Website designed for educational purposes.  
-  For website development, contact <strong>Shiv</strong> 
-  All rights reserved.
-</p>
+                <p>
+                    Website designed for educational purposes.  
+                    For website development, contact <strong>Shiv</strong> 
+                    All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
@@ -1539,7 +1530,7 @@
             
             // Add animation to cards on scroll
             function animateCards() {
-                const cards = document.querySelectorAll('.structure-card, .exam-card, .activity-card');
+                const cards = document.querySelectorAll('.structure-card, .exam-card, .game-card');
                 const screenPosition = window.innerHeight * 0.8;
                 
                 cards.forEach(card => {

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities - Bright Sun Sr. Sec. School</title>
+ 
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+</script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Activities Page CSS -->
+    <style>
+        /* For modern browsers */
+::selection {
+  background-color: #0A1F44;
+  color: #ffffff;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: #0A1F44;
+  color: #ffffff;
+}
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c5aa0;
+            --primary-dark: #1e3a6f;
+            --secondary: #c62828;
+            --accent: #fbc02d;
+            --light: #f8f9fa;
+            --dark: #333333;
+            --gray: #666666;
+            --white: #ffffff;
+            --success: #27ae60;
+            --error: #e74c3c;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* ===== NAVBAR STYLES ===== */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--white);
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--accent) 10%, transparent 10.5%);
+            background-size: 20px 20px;
+            background-position: 0 0;
+            opacity: 0.3;
+        }
+
+        .logo-circle-inner {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .logo-sun {
+            color: var(--accent);
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .logo-container {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* ===== PAGE HERO ===== */
+        .page-hero {
+            background: linear-gradient(135deg, rgba(44, 90, 160, 0.9) 0%, rgba(30, 58, 111, 0.9) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 20px 80px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* ===== ACTIVITIES CONTENT ===== */
+        .activities-content {
+            padding: 60px 20px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Activities Grid */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .activity-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+            height: 100%;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .activity-icon {
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .activity-details {
+            padding: 25px;
+        }
+
+        .activity-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .activity-details p {
+            color: var(--gray);
+            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            margin-top: 50px;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .category-tab {
+            padding: 10px 20px;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            color: var(--primary);
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(44, 90, 160, 0.3);
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 20px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo-img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .footer-logo h2 {
+            color: var(--white);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .footer-logo h2 span {
+            color: var(--accent);
+        }
+
+        .footer-logo p {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #bdc3c7;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 1200px) {
+            .nav-container {
+                padding: 10px 15px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links li {
+                margin-left: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                transform: translateX(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-links a.active::after {
+                display: none;
+            }
+            
+            .nav-links a.active {
+                background-color: rgba(44, 90, 160, 0.1);
+                border-radius: 5px;
+            }
+            
+            .menu-toggle .fa-bars {
+                transition: var(--transition);
+            }
+            
+            .menu-toggle.active .fa-bars {
+                transform: rotate(90deg);
+            }
+            
+            .page-hero {
+                padding: 130px 20px 60px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .activities-content {
+                padding: 40px 20px;
+            }
+            
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-links h3::after, .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-hero {
+                padding: 110px 15px 40px;
+            }
+            
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .logo-circle {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-circle-inner {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .logo-sun {
+                font-size: 28px;
+            }
+            
+            .logo-main {
+                font-size: 1.3rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.7rem;
+            }
+            
+            .nav-container {
+                padding: 10px 10px;
+            }
+            
+            .activity-details {
+                padding: 20px;
+            }
+            
+            .category-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .page-hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html" class="logo-container" id="logo-link">
+                    <!-- Logo will be loaded by JavaScript -->
+                </a>
+            </div>
+            
+            <button class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="academics.html">Academics</a></li>
+                <li><a href="activities.html" class="active">Activities</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <!-- <li><a href="gallery.html">Gallery</a></li> -->
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>School Activities</h1>
+            <p>Holistic Development Through Co-Curricular Activities</p>
+        </div>
+    </section>
+
+    <!-- ===== ACTIVITIES CONTENT ===== -->
+    <section class="activities-content">
+        <div class="container">
+            <!-- Intro Section -->
+            <div class="intro-section">
+                <h2 class="section-title">Our Activities Program</h2>
+                <p>At Bright Sun Sr. Sec. School, we believe in holistic education that goes beyond textbooks. Our diverse range of co-curricular activities ensures students develop physically, creatively, and socially while discovering their passions and talents.</p>
+            </div>
+
+            <!-- Activities Grid -->
+            <div class="activities-grid">
+                <!-- Art & Craft -->
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h3>Art & Craft</h3>
+                        <p>Creative expression through painting, pottery, sketching, and various craft techniques to nurture artistic talents.</p>
+                    </div>
+                </div>
+                
+                <!-- Music & Dance -->
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h3>Music & Dance</h3>
+                        <p>Training in classical and contemporary music and dance forms to develop rhythm, coordination, and performance skills.</p>
+                    </div>
+                </div>
+                
+                <!-- Sports -->
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-football-ball"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h3>Sports</h3>
+                        <p>Various indoor and outdoor sports activities including athletics, team games, and individual sports for physical fitness.</p>
+                    </div>
+                </div>
+                
+                <!-- Yoga & Meditation -->
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h3>Yoga & Meditation</h3>
+                        <p>Regular yoga sessions and meditation practices to promote mental wellness, concentration, and stress management.</p>
+                    </div>
+                </div>
+                
+                <!-- Karate & Self Defence -->
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h3>Karate & Self Defence</h3>
+                        <p>Martial arts training for self-defence, discipline, confidence building, and physical conditioning.</p>
+                    </div>
+                </div>
+                
+                <!-- Debate & Elocution -->
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h3>Debate & Elocution</h3>
+                        <p>Developing public speaking, argumentation, and communication skills through debates, speeches, and discussions.</p>
+                    </div>
+                </div>
+                
+                <!-- NSS -->
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="activity-details">
+                        <h3>NSS (National Service Scheme)</h3>
+                        <p>Community service activities that promote social awareness, responsibility, and leadership skills.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <div class="categories-section">
+                <h2 class="section-title">Activity Categories</h2>
+                <div class="category-tabs">
+                    <div class="category-tab active">Co-Curricular</div>
+                    <div class="category-tab">Creative Arts</div>
+                    <div class="category-tab">Sports & Fitness</div>
+                    <div class="category-tab">Life Skills</div>
+                    <div class="category-tab">Community Service</div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <p style="color: var(--gray); max-width: 600px; margin: 0 auto 20px;">
+                        All activities are conducted under expert guidance with regular schedules and opportunities for participation in inter-school competitions.
+                    </p>
+                    <a href="gallery.html" class="btn btn-primary">
+                        <i class="fas fa-images"></i> View Activities Gallery
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../assets/images/gallery/logo.jpg" alt="Bright Sun School Logo" class="footer-logo-img" id="footer-logo">
+                    <h2>Bright<span>Sun</span> Sr. Sec. School</h2>
+                    <p>Barsar, Mehre, Himachal Pradesh</p>
+                    <p>Affiliated with HP Board of School Education</p>
+                    <p>Established in 1987 • Nursery to 12th</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About School</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone"></i> 9817664300, 9817421900</p>
+                    <p><i class="fas fa-envelope"></i> info@brightsunschool.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Barsar, Mehre, Himachal Pradesh - 174305</p>
+                 
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Bright Sun Sr. Sec. School. All Rights Reserved.</p>
+                   <p>
+  Website designed for educational purposes.  
+  For website development, contact <strong>Shiv</strong> 
+  All rights reserved.
+</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const logoLink = document.getElementById('logo-link');
+            const footerLogo = document.getElementById('footer-logo');
+            const allNavLinks = document.querySelectorAll('.nav-links a');
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            
+            // Function to load logo (with fallback)
+            function loadLogo() {
+                const logoPath = "../assets/images/gallery/logo.jpg";
+                const logoContainer = logoLink;
+                
+                // Try to load the image first
+                const img = new Image();
+                img.src = logoPath;
+                
+                img.onload = function() {
+                    // Image exists, show it
+                    logoContainer.innerHTML = `
+                        <div class="backup-logo" style="display: flex; align-items: center; gap: 15px;">
+                            <img src="${logoPath}" alt="Bright Sun School Logo" style="height: 70px; width: 70px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                            <div class="logo-text">
+                                <div class="logo-main">Bright<span style="color: var(--accent);">Sun</span></div>
+                                <div class="logo-sub">Sr. Sec. School</div>
+                            </div>
+                        </div>
+                    `;
+                };
+                
+                img.onerror = function() {
+                    // Image doesn't exist, show backup logo
+                    logoContainer.innerHTML = `
+                        <div class="logo-circle">
+                            <div class="logo-circle-inner">
+                                <div class="logo-sun">S</div>
+                            </div>
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-main">Bright<span style="color: var(--accent);">Sun</span></div>
+                            <div class="logo-sub">Sr. Sec. School</div>
+                        </div>
+                    `;
+                };
+            }
+            
+            // Load logo
+            loadLogo();
+            
+            // Handle footer logo loading
+            if (footerLogo) {
+                footerLogo.onerror = function() {
+                    this.style.display = 'none';
+                    const parentDiv = this.parentElement;
+                    const fallbackLogo = document.createElement('div');
+                    fallbackLogo.className = 'logo-circle';
+                    fallbackLogo.style.marginBottom = '20px';
+                    fallbackLogo.style.marginLeft = 'auto';
+                    fallbackLogo.style.marginRight = 'auto';
+                    fallbackLogo.innerHTML = `
+                        <div class="logo-circle-inner">
+                            <div class="logo-sun">S</div>
+                        </div>
+                    `;
+                    parentDiv.insertBefore(fallbackLogo, this.nextSibling);
+                };
+            }
+            
+            // Mobile menu toggle with hamburger icon
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function() {
+                    // Toggle menu visibility
+                    navLinks.classList.toggle('active');
+                    
+                    // Toggle hamburger icon rotation
+                    mobileMenu.classList.toggle('active');
+                    
+                    // Toggle body overflow
+                    if (navLinks.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+            
+            // Close menu when clicking a link (for mobile)
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // Category tabs functionality
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                });
+            });
+            
+            // Close menu when clicking outside (for mobile)
+            document.addEventListener('click', function(event) {
+                const isClickInsideNavbar = event.target.closest('.navbar');
+                const isClickInsideMenu = event.target.closest('.nav-links');
+                const isMenuToggle = event.target.closest('#mobile-menu');
+                
+                if (!isClickInsideNavbar && !isClickInsideMenu && !isMenuToggle && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Set active link for current page
+            const currentPage = window.location.pathname.split('/').pop() || 'activities.html';
+            const links = document.querySelectorAll('.nav-links a');
+            
+            links.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                
+                // Remove active class from all links
+                link.classList.remove('active');
+                
+                // Check if this link matches current page
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Add animation to cards on scroll
+            function animateCards() {
+                const cards = document.querySelectorAll('.activity-card');
+                
+                cards.forEach(card => {
+                    const cardPosition = card.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (cardPosition < screenPosition) {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            }
+            
+            // Set initial state for animation
+            const cards = document.querySelectorAll('.activity-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px) scale(0.95)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Run animation on load and scroll
+            window.addEventListener('load', animateCards);
+            window.addEventListener('scroll', animateCards);
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
